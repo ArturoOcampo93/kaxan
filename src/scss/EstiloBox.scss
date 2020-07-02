@@ -1,0 +1,312 @@
+.box {
+    margin: 20px;
+    .boton {
+        width: 200px;
+        height: 50px;
+        background-color: coral;
+        color: white;
+        z-index: 1;
+    }
+    /* Boton + */
+    .botonMas {
+        position: absolute;
+        z-index: 1;
+        top: 20px;
+        left: 10px;
+    }
+    .botonMas:hover {
+        cursor: pointer;
+        circle {
+            fill: #FD0032;
+        }
+        line {
+            stroke: white;
+        }
+    }
+    .BotonMenos {
+        position: absolute;
+        z-index: 1;
+        bottom: 285px;
+        left: 10px;
+    }
+    .BotonMenos:hover {
+        cursor: pointer;
+        circle {
+            fill: #FD0032;
+        }
+        line {
+            stroke: white;
+        }
+    }
+    /* Letra + | Se necesito posicionar manualmente ya que generaba un desfase */
+    .mas {
+        position: absolute;
+        top: -9px;
+        left: 8px;
+        margin: 0%;
+        padding: 0%;
+    }
+    /* Caja Contenedora | Lleva un Overflow: Hidden para ocultar el DIV interno que se desplaza arriba y abajo */
+    .cajaExterior {
+        width: 250px;
+        height: 350px;
+        /*margin-top: 10%;*/
+        overflow: hidden;
+        /*Sombra Exterior*/
+        -webkit-box-shadow: 0px 8px 11px -1px rgba(0, 0, 0, 0.49);
+        -moz-box-shadow: 0px 8px 11px -1px rgba(0, 0, 0, 0.49);
+        box-shadow: 0px 8px 11px -1px rgba(0, 0, 0, 0.49);
+    }
+    /*----------------*/
+    /* Esta es la caja que se desplaza arriba y abajo */
+    .CajaInterior {
+        width: 100%;
+        height: 700px;
+        position: relative;
+    }
+    /* Dentro de la caja interior hay dos divisiones que contiene la información correspondiente de manera vertical */
+    .LadoA {
+        width: 100%;
+        height: 50%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .LadoB {
+        width: 100%;
+        height: 50%;
+        background-color: #FD0333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /*----------------*/
+    /* INTERIOR DE LADO A */
+    /*---------------------*/
+    /* Contiene la figura que genera la diogonal | Mismo color que LadoB */
+    .FormaDiagonal {
+        bottom: 250px;
+        position: absolute;
+        z-index: -0;
+        width: 250px;
+        height: 50px;
+        border-bottom: 180px solid #FF8E01;
+        border-right: 250px solid #FF8E01;
+        border-left: 0px solid transparent;
+        border-top: 30px solid transparent;
+    }
+    .formaRedonda {
+        position: absolute;
+        z-index: 0;
+        top: 150px;
+        width: 250px;
+        height: 150px;
+        background: #FF8E01;
+        border-top-left-radius: 80%;
+        border-top-right-radius: 20%;
+    }
+    .FormaCaja {
+        position: absolute;
+        top: 125px;
+    }
+    /* Es un DIV que contiene la imagen | Debe ser PNG para conservar la transparencia */
+    .ContenedorImg {
+        width: 200px;
+        height: 150px;
+        z-index: 1;
+        position: absolute;
+        top: 65px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    /* Mantener el height al 100% para evitar desbordamiento */
+    .img-prueba {
+        height: 100%;
+    }
+    .semaforo {
+        cursor: pointer;
+        position: absolute;
+        z-index: 1;
+        top: 0px;
+        left: 0px;
+        width: 250px;
+        height: 10px;
+        background: #ACEF7C;
+        transition: height 1s;
+    }
+    .semaforo:hover {
+        height: 25px;
+    }
+    .Vigencia {
+        width: 250px;
+        font-size: 9pt;
+        padding: 3px 0px 5px 0px;
+        text-align: center;
+        font-weight: bold;
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+    .Vigencia:hover {
+        opacity: 1;
+    }
+    .ContenedorTexto-LadoA {
+        position: absolute;
+        width: 200px;
+        height: 120px;
+        z-index: 1;
+        bottom: 360px;
+        color: white;
+    }
+    .ContenedorTexto-LadoB {
+        position: absolute;
+        width: 200px;
+        height: 280px;
+        z-index: 1;
+        bottom: 0px;
+        color: white;
+    }
+    .Patrocinador {
+        font-size: 10pt;
+        font-weight: bold;
+        margin: 0%;
+        color: black;
+    }
+    .Titulo {
+        font-size: 12pt;
+        font-weight: 100;
+    }
+    .Titulo-LadoB {
+        font-size: 12pt;
+        font-weight: Bold;
+        text-align: center;
+    }
+    .Info {
+        font-size: 9pt;
+        font-weight: 100;
+        line-height: 1.2;
+    }
+    .Mecanica ol {
+        text-align: center;
+        margin: 0%;
+        padding-left: 3%;
+    }
+    .Mecanica ol li {
+        font-size: 8pt;
+        margin-bottom: 5%;
+    }
+    .Contenedor-Boton {
+        position: absolute;
+        width: 200px;
+        height: 50px;
+        z-index: 1;
+        bottom: 15px;
+        color: white;
+        display: flex;
+        align-items: center;
+    }
+    .BotonPromo {
+        width: 100%;
+        height: 40px;
+        background: white;
+        color: #FD0333;
+        padding: 4%;
+        font-weight: bold;
+        font-size: 12pt;
+        margin-top: 0%;
+        /*position: relative;
+        z-index: 1;*/
+        /*Bordes Redondos*/
+        border-radius: 6px 6px 6px 6px;
+        -moz-border-radius: 6px 6px 6px 6px;
+        -webkit-border-radius: 6px 6px 6px 6px;
+        border: 0px solid #000000;
+        /*Sombra Boton*/
+        -webkit-box-shadow: 0px 3px 11px 1px rgba(0, 0, 0, 0.49);
+        -moz-box-shadow: 0px 3px 11px 1px rgba(0, 0, 0, 0.49);
+        box-shadow: 0px 3px 11px 1px rgba(0, 0, 0, 0.49);
+    }
+    .BotonPromo:hover {
+        color: white;
+    }
+    /*---------------------*/
+    /*--------Animación--------*/
+    /* Esta animación genera un movimiento vertical en la caja interior los pixeles exactos equivalentes al alto de la caja exterior */
+    @keyframes abajo {
+        0% {
+            top: 0px;
+        }
+        100% {
+            top: -350px;
+        }
+    }
+    @keyframes arriba {
+        0% {
+            top: -350px;
+        }
+        100% {
+            top: 0px;
+        }
+    }
+    /*Crece | decrece la barra de estado de la vigencia*/
+    @keyframes crece {
+        0% {
+            height: 10px;
+        }
+        100% {
+            height: 25px;
+        }
+    }
+    @keyframes decrece {
+        0% {
+            height: 25px;
+        }
+        100% {
+            height: 10px;
+        }
+    }
+    /*Aparece | deparece el texto de la vigencia*/
+    @keyframes aparece {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes desaparace {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    /*Esta animación mueve el botón mas cuando se muestra la vigencia*/
+    @keyframes MoverAbajoBoton {
+        0% {
+            top: 20px;
+        }
+        100% {
+            top: 30px;
+        }
+    }
+    @keyframes MoverArribaBoton {
+        0% {
+            top: 30px;
+        }
+        100% {
+            top: 20px;
+        }
+    }
+}
+
+.animacion {
+    transition: top 2s;
+}
+
+.animacion:active {
+    top: -350px;
+}

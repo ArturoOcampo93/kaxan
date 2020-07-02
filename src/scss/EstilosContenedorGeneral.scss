@@ -1,0 +1,60 @@
+@import '_variables';
+#contGeneral {
+    background-color: $grisKaxan;
+    padding: 3%;
+    .Titulos {
+        width: 100%;
+        padding: 3%;
+        h3 {
+            font-size: 2em;
+            font-weight: 600;
+        }
+        p {
+            font-size: 1.5em;
+        }
+    }
+    #cont-center {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        #ContCajas {
+            max-width: 1450px;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+#boton-up {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1543px) {
+    #ContCajas {
+        width: 1160px;
+    }
+}
+
+@media only screen and (max-width: 1236px) {
+    #ContCajas {
+        width: 870px;
+    }
+}
+
+@media only screen and (max-width: 926px) {
+    #ContCajas {
+        width: 580px;
+    }
+}
+
+@media only screen and (max-width: 616px) {
+    #ContCajas {
+        width: 290px;
+    }
+}

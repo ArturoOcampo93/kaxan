@@ -1,0 +1,210 @@
+@media only screen and (min-width: 1751px) {
+    .cont-select-circulos {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 1750px) {
+    .cont-select-circulos {
+        display: grid !important;
+    }
+    .cont-division {
+        height: 650px !important;
+    }
+}
+
+@media only screen and (max-width: 1520px) {
+    .cont-division {
+        height: 600px !important;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .cont-division {
+        height: 550px !important;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .cont-division {
+        height: 500px !important;
+    }
+    .cont-texto-principal {
+        div {
+            h1 {
+                font-size: 3vw;
+            }
+            p {
+                font-size: 1.5vw;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1130px) {
+    .cont-division {
+        height: 400px !important;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .cont-division {
+        height: 350px !important;
+    }
+    .cont-divisores {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    .cont-select-circulos {
+        display: none !important;
+    }
+    .cont-division {
+        height: 400px !important;
+        justify-content: center;
+    }
+    .cont-texto-principal {
+        width: 60% !important;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        div {
+            h1 {
+                font-size: 16pt;
+            }
+            p {
+                font-size: 10pt;
+            }
+        }
+        .cont-divisores {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+            .circulo-divisor {
+                width: 20px;
+                height: 20px;
+                -moz-border-radius: 20px;
+                -webkit-border-radius: 20px;
+                border-radius: 20px;
+                background: rgba(255, 255, 255, 0.5);
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+.BannerPrincipal {
+    width: 100%;
+    height: auto;
+    padding: 0%;
+    margin: 0%;
+    .cont-division {
+        width: 100%;
+        height: 800px;
+        margin-top: 100px;
+        position: absolute;
+        display: flex;
+        .cont-texto-principal {
+            width: 50%;
+            height: 100%;
+            padding: 3%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cont-select-circulos {
+            width: 50%;
+            display: grid;
+            grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+            grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+            #circulo-select-1 {
+                width: 80px !important;
+                height: 80px !important;
+                grid-column-start: 7;
+                grid-column-end: 8;
+                grid-row-start: 2;
+                grid-row-end: 3;
+                cursor: pointer;
+            }
+            #circulo-select-2 {
+                width: 80px !important;
+                height: 80px !important;
+                grid-column-start: 5;
+                grid-column-end: 6;
+                grid-row-start: 7;
+                grid-row-end: 8;
+                cursor: pointer;
+            }
+            #circulo-select-3 {
+                width: 80px !important;
+                height: 80px !important;
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 8;
+                grid-row-end: 9;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+#principal-1 {
+    display: block;
+    position: relative;
+    left: 0px;
+}
+
+#principal-2 {
+    display: none;
+    position: relative;
+    left: 0px;
+}
+
+#principal-3 {
+    display: none;
+    position: relative;
+    left: 0px;
+}
+
+@keyframes BannerTextoEntrada {
+    from {
+        left: -1200px;
+    }
+    to {
+        left: 0px;
+    }
+}
+
+.botonPrincipal {
+    width: 300px;
+}
+
+#divisor-1 {
+    background-color: rgba(255, 132, 0, 0.5);
+}
+
+.cont-VerMas {
+    display: flex;
+    justify-content: center;
+    margin-top: -100px;
+    cursor: pointer;
+    img {
+        width: 10%;
+    }
+}
+
+@media only screen and (max-width: 1279px) {
+    .cont-VerMas {
+        margin-top: -70px;
+    }
+}
+
+@media only screen and (max-width: 570px) {
+    .cont-VerMas {
+        display: none;
+    }
+}

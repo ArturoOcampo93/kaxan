@@ -1,0 +1,1093 @@
+// Importación de las variables y parametros generales
+@import 'variables';
+
+/* Comienza Estilos de Header */
+
+header {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.801);
+    div {
+        display: flex;
+        align-items: center;
+    }
+    .cont-logo {
+        margin-left: 25px;
+        width: 250px;
+    }
+    #menu {
+        margin-right: 30px;
+        cursor: pointer;
+    }
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.801);
+    div {
+        display: flex;
+        align-items: center;
+    }
+    .cont-logo {
+        margin-left: 25px;
+        width: 250px;
+    }
+    .buscador {
+        width: auto;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        padding-right: 30px;
+        border-right: 1px solid white;
+    }
+    .cont-input-buscador {
+        width: 320px;
+        display: flex;
+        input {
+            width: 100%;
+            height: 45px;
+            padding-left: 15px;
+            /*Bordes Redondos*/
+            border-radius: 20px 20px 20px 20px;
+            -moz-border-radius: 20px 20px 20px 20px;
+            -webkit-border-radius: 20px 20px 20px 20px;
+            border: 0px solid #000000;
+        }
+        img {
+            width: 26px;
+            height: 27px;
+            position: relative;
+            float: right;
+            right: 45px;
+            top: 0px;
+        }
+    }
+}
+
+#buscador-input {
+    width: 0px;
+    opacity: 0;
+    display: none;
+}
+
+
+/* Animación del Buscador */
+
+@keyframes displayBuscador {
+    from {
+        display: flex;
+        width: 0px;
+        opacity: 0;
+    }
+    to {
+        width: 320px;
+        opacity: 1;
+    }
+}
+
+#NavGeneral {
+    /* Display | flex */
+    display: flex;
+    margin-right: 30px;
+    ul {
+        display: flex;
+        margin: 0%;
+        li {
+            list-style: none;
+            margin-left: 10px;
+            margin-right: 10px;
+            a {
+                color: white;
+                font-size: 16pt;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+
+/* Display | Flex */
+
+#NavLogIn {
+    display: none;
+    margin-right: 30px;
+    .cont-alertas {
+        margin-right: 45px;
+        margin-left: 45px;
+        #cont-num-alertas {
+            width: 30px;
+            color: white;
+            font-size: 10pt;
+            font-weight: 700;
+            margin: 0;
+            position: absolute;
+            margin-left: 17px;
+            margin-top: -10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    .cont-photo {
+        #circulo-porcentaje {
+            width: 0;
+            height: 0;
+            /* Circulo dividido en 4 partes | Se cambia cada sección con Border- right | Left | Bottom | top */
+            border-right: 50px solid $colorKaxan;
+            border-top: 50px solid $colorKaxan;
+            border-left: 50px solid white;
+            border-bottom: 50px solid $colorKaxan;
+            -moz-border-radius: 100%;
+            -webkit-border-radius: 100%;
+            border-radius: 100%;
+            transform: rotate(45deg);
+        }
+        #circulo-foto {
+            width: 75px;
+            height: 75px;
+            -moz-border-radius: 75px;
+            -webkit-border-radius: 75px;
+            border-radius: 75px;
+            background-color: white;
+            /* La foto de perfil entra como background en el circulo */
+            background-image: url(images/profile.png);
+            /* Estas propiedades redimencionan la imagen al tamaño del circulo, centran la imagen y no la repiten */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* Pone el circulo encima del circulo de porcentaje */
+            position: absolute;
+            margin-left: 12px;
+        }
+    }
+}
+
+.texto-alertas {
+    display: none;
+}
+
+.datos {
+    display: none;
+}
+
+#cont-notificaciones-mobile {
+    display: none;
+}
+
+.cont-alertas {
+    display: flex;
+}
+
+.icono-menu-general {
+    display: none;
+}
+
+@media only screen and (max-width: 990px) {
+    header {
+        display: flex;
+    }
+    nav {
+        left: -790px;
+        width: 80%;
+        height: 100%;
+        position: fixed;
+        display: block;
+        background-color: $grisKaxan;
+        overflow: auto;
+        /*Sombra Externa*/
+        -webkit-box-shadow: 10px 0px 11px -4px rgba(0, 0, 0, 0.41);
+        -moz-box-shadow: 10px 0px 11px -4px rgba(0, 0, 0, 0.41);
+        box-shadow: 10px 0px 11px -4px rgba(0, 0, 0, 0.41);
+        .cont-logo {
+            display: none;
+        }
+        #cont-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: left !important;
+            margin-bottom: 100px;
+            /*Display | flex*/
+            #NavLogIn {
+                display: none;
+                flex-direction: column-reverse;
+                justify-content: center;
+                margin-bottom: 50px;
+            }
+        }
+    }
+    nav .buscador {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border-right: none;
+        padding-right: 0%;
+    }
+    #NavGeneral {
+        /*Display | flex*/
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-right: 30px;
+        width: 90%;
+        ul {
+            width: 100%;
+            display: block;
+            margin: 0%;
+            padding-left: 20px;
+            div {
+                width: 100%;
+                margin-top: 20px;
+                border-bottom: 1px solid $colorKaxan;
+                li {
+                    list-style: none;
+                    margin-left: 25px;
+                    margin-right: 10px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    a {
+                        color: black;
+                        font-size: 16pt;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+    .icono-menu-general {
+        display: block;
+    }
+    .cont-alertas {
+        display: none;
+    }
+    #NavLogIn {
+        width: 100%;
+        margin-right: 0%;
+        .cont-alertas {
+            width: 100%;
+            margin: 0%;
+            margin-top: 50px;
+            padding-left: 30px;
+            padding-bottom: 20px;
+            text-align: center !important;
+            .texto-alertas {
+                display: block;
+                font-size: 14pt;
+                font-weight: 400;
+                margin: 0;
+                margin-left: 20px;
+            }
+        }
+    }
+    #cont-notificaciones-mobile {
+        display: block;
+        flex-direction: column;
+        .TituloNotificaciones {
+            width: 100%;
+            text-align: center;
+            display: block;
+            h4 {
+                font-size: 14pt;
+                font-weight: 600;
+                margin: 0%;
+                margin-top: 10px;
+            }
+            div {
+                width: 100%;
+                .text-borrar {
+                    font-size: 10pt;
+                    position: relative;
+                    float: right;
+                    margin: 0%;
+                    margin-top: 10px;
+                    margin-left: 20px;
+                    color: $negroKaxan;
+                }
+            }
+        }
+        .cont-last-notifications {
+            width: 100%;
+            max-height: 368px;
+            overflow: auto;
+            display: block;
+            .container-view {
+                height: auto;
+                background-color: white;
+                display: flex;
+                margin-top: 8px;
+                margin-bottom: 8px;
+                margin-left: 10px;
+                margin-right: 10px;
+                /*Bordes Redondos*/
+                border-radius: 10px 10px 10px 10px;
+                -moz-border-radius: 10px 10px 10px 10px;
+                -webkit-border-radius: 10px 10px 10px 10px;
+                border: 0px solid #000000;
+                /*Sombra Externa*/
+                -webkit-box-shadow: 0px 10px 8px -6px rgba(0, 0, 0, 0.67);
+                -moz-box-shadow: 0px 10px 8px -6px rgba(0, 0, 0, 0.67);
+                box-shadow: 0px 10px 8px -6px rgba(0, 0, 0, 0.67);
+                .texto-viewcont {
+                    width: 100%;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    padding-top: 10px;
+                    padding-bottom: 20px;
+                    display: block;
+                    .cerrar {
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-end;
+                        a {
+                            margin-right: 10px;
+                            color: $negroKaxan;
+                        }
+                    }
+                    h3 {
+                        width: 100%;
+                        font-weight: 700;
+                        margin: 0%;
+                        margin-right: 0px;
+                        font-size: 12pt;
+                        color: $colorKaxan;
+                    }
+                    p {
+                        font-weight: 100;
+                        margin: 0%;
+                        font-size: 10pt;
+                        overflow: auto;
+                    }
+                }
+            }
+        }
+    }
+    #buscador-input {
+        width: 100%;
+        opacity: 1;
+        display: flex;
+        justify-content: center;
+        input {
+            margin-left: 30px;
+            font-size: 10pt;
+        }
+    }
+    #lupa {
+        display: none;
+        cursor: pointer;
+    }
+    .flex-center {
+        display: flex;
+        justify-content: center;
+    }
+    .cont-perfil {
+        width: 100%;
+        display: block;
+        .datos {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            h3 {
+                width: 100%;
+                margin-top: 10px;
+                margin-bottom: 0px;
+                padding: 0% 10% 0% 10%;
+            }
+            p {
+                margin-bottom: 25px;
+            }
+            button {
+                height: 50px;
+                padding-left: 30px;
+                padding-right: 30px;
+                background-color: $colorKaxan;
+                color: white;
+                font-size: 14pt;
+                font-weight: 500;
+                border-radius: 10px 10px 10px 10px;
+                -moz-border-radius: 10px 10px 10px 10px;
+                -webkit-border-radius: 10px 10px 10px 10px;
+                border: 0px solid #000000;
+            }
+            #botonPerfil {
+                max-width: 300px;
+                font-size: 13pt;
+            }
+        }
+    }
+    .cont-photo {
+        #circulo-porcentaje {
+            width: 0;
+            height: 0;
+            border-right: 80px solid $colorKaxan !important;
+            border-top: 80px solid $colorKaxan !important;
+            border-left: 80px solid white !important;
+            border-bottom: 80px solid $colorKaxan !important;
+            -moz-border-radius: 100%;
+            -webkit-border-radius: 100%;
+            border-radius: 100%;
+            transform: rotate(45deg);
+        }
+        #circulo-foto {
+            width: 120px !important;
+            height: 120px !important;
+            -moz-border-radius: 120px !important;
+            -webkit-border-radius: 120px !important;
+            border-radius: 120px !important;
+            background-color: white;
+            /* La foto de perfil entra como background en el circulo */
+            background-image: url(images/profile.png);
+            /* Estas propiedades redimencionan la imagen al tamaño del circulo, centran la imagen y no la repiten */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* Pone el circulo encima del circulo de porcentaje */
+            position: absolute;
+            margin-left: 19px !important;
+        }
+    }
+}
+
+@keyframes displayMenuOpen {
+    from {
+        left: -790px;
+    }
+    to {
+        left: 0px;
+    }
+}
+
+@keyframes displayMenuClose {
+    from {
+        left: 0px;
+    }
+    to {
+        left: -790px;
+    }
+}
+
+
+/* MODALS */
+
+
+/*Profile*/
+
+.triangulo-profile {
+    width: 0;
+    height: 0;
+    margin-left: 210px;
+    border-right: 20px solid transparent;
+    border-top: 20px solid transparent;
+    border-left: 20px solid transparent;
+    border-bottom: 20px solid $grisKaxan;
+}
+
+.modal-profile {
+    margin: 0% !important;
+    float: right !important;
+    margin-top: 100px !important;
+    margin-right: 30px !important;
+}
+
+.modal-profile-content {
+    width: 280px;
+    height: 610px !important;
+    border-top: none;
+    background-color: $grisKaxan;
+}
+
+.cont-photo-modal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    #circulo-porcentaje-modal {
+        width: 0;
+        height: 0;
+        /* Circulo dividido en 4 partes | Se cambia cada sección con Border- right | Left | Bottom | top */
+        border-right: 60px solid $colorKaxan;
+        border-top: 60px solid $colorKaxan;
+        border-left: 60px solid white;
+        border-bottom: 60px solid $colorKaxan;
+        -moz-border-radius: 100%;
+        -webkit-border-radius: 100%;
+        border-radius: 100%;
+        transform: rotate(45deg);
+    }
+    #circulo-foto-modal {
+        width: 90px;
+        height: 90px;
+        -moz-border-radius: 75px;
+        -webkit-border-radius: 75px;
+        border-radius: 75px;
+        background-color: white;
+        /* La foto de perfil entra como background en el circulo */
+        background-image: url(images/profile.png);
+        /* Estas propiedades redimencionan la imagen al tamaño del circulo, centran la imagen y no la repiten */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* Pone el circulo encima del circulo de porcentaje */
+        position: absolute;
+        margin-left: 0px;
+        margin-top: 15px;
+    }
+}
+
+.datos-modal {
+    display: block;
+    text-align: center;
+    h3 {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        font-size: 16pt;
+        font-weight: 600;
+    }
+    p {
+        margin-bottom: 20px;
+        font-size: 11pt;
+    }
+    button {
+        height: 45px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: $colorKaxan;
+        color: white;
+        font-size: 12pt;
+        font-weight: 500;
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        border: 0px solid #000000;
+        margin-bottom: 10px;
+    }
+    .link-menu {
+        text-align: center;
+        color: black;
+        font-size: 11pt;
+    }
+}
+
+.cont-last-views {
+    width: 100%;
+    height: 270px;
+    border-top: 2px solid white;
+    padding-top: 10px;
+    margin-top: 15px;
+    overflow: auto;
+    .container-view {
+        background-color: white;
+        display: flex;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        /*Bordes Redondos*/
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        border: 0px solid #000000;
+        .status-viewcont-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .status-circle {
+                width: 20px;
+                height: 20px;
+                -moz-border-radius: 20px;
+                -webkit-border-radius: 20px;
+                border-radius: 20px;
+                background: $verdeKaxan;
+                margin: 10px;
+                margin-right: 20px;
+            }
+        }
+        .texto-viewcont {
+            height: 77px;
+            padding-right: 5px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            h3 {
+                width: 180px;
+                height: 20px;
+                font-weight: 700;
+                margin: 0%;
+                font-size: 12pt;
+                overflow: hidden;
+            }
+            p {
+                height: 38px;
+                font-weight: 100;
+                margin: 0%;
+                font-size: 10pt;
+                overflow: auto;
+            }
+        }
+    }
+}
+
+.width100 {
+    width: 100%;
+}
+
+.TituloNotificaciones {
+    width: 100%;
+    text-align: center;
+    h4 {
+        font-size: 14pt;
+        font-weight: 600;
+        margin: 0%;
+        margin-top: 10px;
+    }
+    div {
+        width: 100%;
+        .text-borrar {
+            font-size: 10pt;
+            position: relative;
+            float: right;
+            margin: 0%;
+            margin-top: 10px;
+            color: $negroKaxan;
+        }
+    }
+}
+
+.cont-last-notifications {
+    width: 100%;
+    max-height: 368px;
+    overflow: auto;
+    .container-view {
+        height: auto;
+        background-color: white;
+        display: flex;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        /*Bordes Redondos*/
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        border: 0px solid #000000;
+        /*Sombra Externa*/
+        -webkit-box-shadow: 0px 10px 8px -6px rgba(0, 0, 0, 0.67);
+        -moz-box-shadow: 0px 10px 8px -6px rgba(0, 0, 0, 0.67);
+        box-shadow: 0px 10px 8px -6px rgba(0, 0, 0, 0.67);
+        .texto-viewcont {
+            padding-left: 20px;
+            padding-right: 5px;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            .cerrar {
+                width: 100%;
+                float: right;
+                a {
+                    position: relative;
+                    float: right;
+                    margin-right: 10px;
+                    color: $negroKaxan;
+                }
+            }
+            h3 {
+                width: 100%;
+                font-weight: 700;
+                margin: 0%;
+                margin-right: 0px;
+                font-size: 12pt;
+                color: $colorKaxan;
+            }
+            p {
+                font-weight: 100;
+                margin: 0%;
+                font-size: 10pt;
+                overflow: auto;
+            }
+        }
+    }
+}
+
+
+/* Color del semaforo | Menu Modal */
+
+.color-ambar {
+    background-color: $naranjaKaxan !important;
+}
+
+.color-rojo {
+    background-color: $rojoKaxan !important;
+}
+
+
+/* Parametros de scrollBar */
+
+
+/* width */
+
+p::-webkit-scrollbar {
+    width: 1px;
+}
+
+.cont-last-views::-webkit-scrollbar {
+    width: 2px;
+}
+
+
+/*Notificaciones*/
+
+.triangulo-notificaciones {
+    width: 0;
+    height: 0;
+    margin-left: 210px;
+    border-right: 20px solid transparent;
+    border-top: 20px solid transparent;
+    border-left: 20px solid transparent;
+    border-bottom: 20px solid $grisKaxan;
+}
+
+.modal-notificaciones {
+    margin: 0% !important;
+    float: right !important;
+    margin-top: 100px !important;
+    margin-right: 150px !important;
+}
+
+.modal-notificaciones-content {
+    width: 280px;
+    max-height: 460px;
+    border-top: none;
+    background-color: $grisKaxan;
+}
+
+
+/* Modal | Registro - LogIn */
+
+.modal-registro {
+    display: flex;
+    flex-direction: column;
+    background: none !important;
+    border: none !important;
+    .OutModal {
+        width: 100%;
+        text-align: center;
+        div {
+            display: flex;
+            justify-content: center;
+        }
+        p {
+            color: white;
+            a {
+                color: white;
+                font-weight: 700;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    .bodyRegistro {
+        background-color: white !important;
+        padding: 0% !important;
+        .cont-botones {
+            width: 100%;
+            display: flex;
+            div {
+                width: 50%;
+                height: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                p {
+                    margin: 0%;
+                    cursor: pointer;
+                }
+                p:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+#Registro {
+    /*Display | Block*/
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    .cont-botones-redes {
+        display: flex;
+        justify-content: space-between;
+        div {
+            width: 35%;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 1%;
+            margin-right: 1%;
+            cursor: pointer;
+            /*Bordes Redondos*/
+            border-radius: 5px 5px 5px 5px;
+            -moz-border-radius: 5px 5px 5px 5px;
+            -webkit-border-radius: 5px 5px 5px 5px;
+            border: 0px solid #000000;
+        }
+        div:hover {
+            background-color: $naranjaKaxan;
+        }
+    }
+    .cont-linea {
+        width: 100%;
+        p {
+            position: absolute;
+            background-color: white;
+            color: $grisOscuroKaxan;
+            padding-left: 5px;
+            padding-right: 5px;
+            left: 50%;
+            margin-top: -12px;
+        }
+        .linea {
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid $grisKaxan;
+        }
+    }
+    .form-registro {
+        width: 100%;
+        margin-bottom: 15px;
+        form {
+            width: 100%;
+            input {
+                height: 45px;
+                /*Bordes Redondos*/
+                border-radius: 0px 5px 5px 0px;
+                -moz-border-radius: 0px 5px 5px 0px;
+                -webkit-border-radius: 0px 5px 5px 0px;
+            }
+        }
+    }
+    p {
+        a {
+            font-weight: 600;
+            cursor: pointer;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+#Ingresa {
+    /*Display | Block*/
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    .cont-botones-redes {
+        display: flex;
+        justify-content: space-between;
+        div {
+            width: 35%;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 1%;
+            margin-right: 1%;
+            cursor: pointer;
+            /*Bordes Redondos*/
+            border-radius: 5px 5px 5px 5px;
+            -moz-border-radius: 5px 5px 5px 5px;
+            -webkit-border-radius: 5px 5px 5px 5px;
+            border: 0px solid #000000;
+        }
+        div:hover {
+            background-color: $naranjaKaxan;
+        }
+    }
+    .cont-linea {
+        width: 100%;
+        p {
+            position: absolute;
+            background-color: white;
+            color: $grisOscuroKaxan;
+            padding-left: 5px;
+            padding-right: 5px;
+            left: 50%;
+            margin-top: -12px;
+        }
+        .linea {
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid $grisKaxan;
+        }
+    }
+    .form-ingresa {
+        width: 100%;
+        margin-bottom: 15px;
+        form {
+            width: 100%;
+            input {
+                height: 45px;
+                /*Bordes Redondos*/
+                border-radius: 0px 5px 5px 0px;
+                -moz-border-radius: 0px 5px 5px 0px;
+                -webkit-border-radius: 0px 5px 5px 0px;
+            }
+        }
+    }
+    p {
+        a {
+            font-weight: 600;
+            cursor: pointer;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.input-group {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.input-group-text {
+    width: 45px !important;
+}
+
+i {
+    width: 30px;
+}
+
+button {
+    width: 100%;
+    background-color: #F4911E;
+    height: 45px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    margin-top: 20px;
+    /*Bordes Redondos*/
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+}
+
+#google {
+    background-color: #DD4C39;
+}
+
+#facebook {
+    background-color: #3C5A98;
+}
+
+#twitter {
+    background-color: #56ACEF;
+}
+
+#boton-ingresa {
+    background-color: $grisKaxan;
+}
+
+.flex {
+    display: flex;
+}
+
+.width50 {
+    width: 50%;
+    a {
+        width: 100%;
+        text-align: right;
+        cursor: pointer;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.align-vertical {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox {
+    input {
+        width: 20px;
+    }
+    div {
+        display: flex;
+        align-items: center;
+        p {
+            margin: 0%;
+            margin-left: 10px;
+            vertical-align: center;
+        }
+    }
+}
+
+#NavDashboard {
+    /* Display | block */
+    display: none;
+    .cont-inicio {
+        a {
+            color: white;
+            font-weight: 700;
+            font-size: 14pt;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+    }
+}
+
+.MenuDashboard {
+    display: none;
+}
+
+@media only screen and (max-width: 990px) {
+    #NavDashboard {
+        /* Display block */
+        display: none;
+        width: 100%;
+        margin-bottom: 100px;
+    }
+    .cont-inicio {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+        a {
+            background-color: $colorKaxan;
+            padding: 10px 60px 10px 60px;
+            /*Bordes Redondos*/
+            border-radius: 5px 5px 5px 5px;
+            -moz-border-radius: 5px 5px 5px 5px;
+            -webkit-border-radius: 5px 5px 5px 5px;
+        }
+    }
+    .MenuDashboard {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        color: $negroKaxan;
+        ul {
+            list-style: none;
+            padding-left: 10px;
+            li {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                a {
+                    color: $negroKaxan;
+                    font-weight: 400 !important;
+                    font-size: 12pt !important;
+                    margin-left: 10px !important;
+                }
+            }
+        }
+    }
+}
+
+#info {
+    color: $colorKaxan;
+}

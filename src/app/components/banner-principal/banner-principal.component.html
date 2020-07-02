@@ -1,0 +1,45 @@
+<div class="container-fluid BannerPrincipal">
+    <div class="cont-division">
+        <div class="cont-texto-principal">
+            <div id="principal-1">
+                <h1>Todas las promociones en un sólo lugar, con un click.</h1>
+                <p>Tenemos un amplio catalogo de promociones en los que podrás obtener premios de toda clase.</p>
+                <button type="button" class="botonPrincipal">Registrate</button>
+            </div>
+            <div id="principal-2">
+                <h1>Titulo principal no.2</h1>
+                <p>Tenemos un amplio catalogo de promociones en los que podrás obtener premios de toda clase.</p>
+                <button type="button" class="botonPrincipal">Registrate</button>
+            </div>
+            <div id="principal-3">
+                <h1>Titulo principal no.3</h1>
+                <p>Tenemos un amplio catalogo de promociones en los que podrás obtener premios de toda clase.</p>
+                <button type="button" class="botonPrincipal">Registrate</button>
+            </div>
+            <div class="cont-divisores">
+                <div class="circulo-divisor" id="divisor-1" onclick="CircleSelect(1)"></div>
+                <div class="circulo-divisor" id="divisor-2" onclick="CircleSelect(2)"></div>
+                <div class="circulo-divisor" id="divisor-3" onclick="CircleSelect(3)"></div>
+            </div>
+        </div>
+        <div class="cont-select-circulos">
+            <div id="circulo-select-1" onclick="CircleSelect(1)">
+                <img id="img-circle-1" src="assets/images/CircleSelected.png">
+            </div>
+            <div id="circulo-select-2" onclick="CircleSelect(2)">
+                <img id="img-circle-2" src="assets/images/CirculoSeleccion.png">
+            </div>
+            <div id="circulo-select-3" onclick="CircleSelect(3)">
+                <img id="img-circle-3" src="assets/images/CirculoSeleccion.png">
+            </div>
+        </div>
+    </div>
+    <picture>
+        <source media="(min-width:769px)" srcset="assets/images/Desktop.png">
+        <source media="(min-width:426px)" srcset="assets/images/Tablet.png">
+        <img class="img-fluid width100" src="assets/images/Mobile.png" alt="Banner Principal">
+    </picture>
+    <div [ngxScrollTo]="'#promo-pagadas'" class="width100 cont-VerMas">
+        <img src="assets/images/IconoVerMas.png" alt="Ver más">
+    </div>
+</div>

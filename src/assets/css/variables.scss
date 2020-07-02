@@ -1,0 +1,31 @@
+// Fuente
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;600;700&display=swap');
+// Variables
+$colorKaxan: #FF8400;
+$negroKaxan: #000000;
+$grisOscuroKaxan: #313131;
+$grisKaxan: #EBEBEB;
+$grisDashboardKaxan: #F2F2F2;
+$verdeKaxan: #ACEF7C;
+$rojoKaxan: #FD0032;
+$naranjaKaxan: #FAB360;
+$gris-2Kaxan: #DDDDDD;
+$colorFlechas: #707070;
+// Generales
+input:focus,
+input.form-control:focus,
+button:focus {
+    outline: none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+button:hover {
+    background-color: $rojoKaxan !important;
+}

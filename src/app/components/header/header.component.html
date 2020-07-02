@@ -1,0 +1,475 @@
+<!-- 
+        HEADER
+        Solo aparece en las versiones Tablet & Mobile 
+        Y contiene el Logo y el icono del menu para Mobile 
+    -->
+<header class="container-fluid">
+    <div class="cont-logo">
+        <img src="assets/images/LogoHeader.png" alt="Kaxan">
+    </div>
+    <div id="menu">
+        <img id="menuIcon" src="assets/images/menu.png" alt="Menu" onclick="menu()">
+    </div>
+</header>
+
+<!-- 
+            NAV
+            En la version Desktop actua como Header pero en la versión Mobile oculta el logo y cambia a vertical, añadiendo información extra: 
+            * Nombre de Usuario
+            * % de Perfil completado
+            * Botón de "editar perfil"
+            * Texto " Notificaciones" al icono de las alertas
+            * Mantiene el input del buscador visible
+        -->
+<nav id="nav">
+    <div class="cont-logo">
+        <img src="assets/images/LogoHeader.png" alt="Kaxan">
+    </div>
+
+    <!--
+                cont-menu
+                Este contenedor lleva los diferentes headers del sitio.
+                ** Estan ocultos en el CSS con display: none; buscando el ID **
+            -->
+    <div id="cont-menu">
+
+
+        <!--Buscador-->
+        <div class="buscador">
+            <div class="cont-input-buscador" id="buscador-input">
+                <input type="text" placeholder="¿Qué estas buscando?">
+                <img src="assets/images/lupa.png" alt="Buscador">
+            </div>
+            <img src="assets/images/lupa.png" alt="Buscador" id="lupa" onclick="displayBuscador()">
+        </div>
+        <!--/ termina buscador-->
+
+
+        <!--Header General | Se muestra cuando no esta logeado-->
+        <div id="NavGeneral">
+            <ul>
+                <div>
+                    <img class="icono-menu-general" src="assets/images/icono-registro.png" alt="Registro">
+                    <li><a data-toggle="modal" data-target="#ModalRegistro" onclick="botonesRegistro(1)">Crear cuenta</a></li>
+                </div>
+                <div>
+                    <img class="icono-menu-general" src="assets/images/icono-login.png" alt="Ingresa">
+                    <li><a data-toggle="modal" data-target="#ModalRegistro" onclick="botonesRegistro(2)">Ingresa</a></li>
+                </div>
+            </ul>
+        </div>
+        <!--Termina Header General-->
+
+
+        <!--Header LogIn | Se muestra cuando el usuario ya hizo Log In -->
+        <div id="NavLogIn">
+            <div class="cont-alertas" onclick="CheckScreenModalNotificaciones()">
+                <div id="cont-num-alertas">+1</div>
+                <img src="assets/images/icono-alertas.png" alt="Icono-Alertas">
+                <!--este texto solo se muestra en el menu Tablet & Mobile-->
+                <p class="texto-alertas">Notificaciones</p>
+            </div>
+
+            <!--Solo se muestra en Tablet y Mobile | Se repite las notificaciones en esta sección y en el modal de Notificaciones-->
+            <div id="cont-notificaciones-mobile">
+                <div class="TituloNotificaciones">
+                    <h4>Notificaciones</h4>
+                    <div>
+                        <a class="text-borrar">Borrar todo</a>
+                    </div>
+                </div>
+                <div class="cont-last-notifications">
+
+                    <!--Caja Notificación-->
+                    <div class="container-view">
+                        <div class="texto-viewcont">
+                            <div class="cerrar">
+                                <a>x</a>
+                            </div>
+                            <h3>Bienvenido</h3>
+                            <p>Recuerda completar tu perfil, para obtener mejores resultados.</p>
+                        </div>
+                    </div>
+                    <!--Termina caja-->
+
+                    <!--Caja Notificación-->
+                    <div class="container-view">
+                        <div class="texto-viewcont">
+                            <div class="cerrar">
+                                <a>x</a>
+                            </div>
+                            <h3>¡Todavia tienes tiempo!</h3>
+                            <p>La promoción esta por expirar, participa antes del 28 de Agosto 2020 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio alias ipsam pariatur excepturi atque mollitia, eligendi numquam porro eum sequi? Excepturi
+                                vitae, nam ipsam architecto laboriosam sequi inventore voluptates? Vero.</p>
+                        </div>
+                    </div>
+                    <!--Termina caja-->
+
+                    <!--Caja Notificación-->
+                    <div class="container-view">
+                        <div class="texto-viewcont">
+                            <div class="cerrar">
+                                <a>x</a>
+                            </div>
+                            <h3>¡Todavia tienes tiempo!</h3>
+                            <p>La promoción esta por expirar, participa antes del 28 de Agosto 2020</p>
+                        </div>
+                    </div>
+                    <!--Termina caja-->
+
+                </div>
+            </div>
+
+
+            <div class="cont-perfil">
+                <div class="flex-center">
+                    <div class="cont-photo">
+                        <!-- 
+                                    El porcentaje se maneja partiendo un circulo en 4 secciones y se pinta cada seccion de color "NaranjaKaxan" $colorKaxan: #FF8400;
+                                    Se debe buscar y cambiar el ID "#circulo-porcentaje"
+                                -->
+                        <div id="circulo-porcentaje"></div>
+
+                        <!--Imagen del perfil como "background-image"-->
+                        <div id="circulo-foto" onclick="CheckScreenModalProfile()"></div>
+                    </div>
+                </div>
+
+                <!--Se muestra solo en la version Tablet & Mobile-->
+                <div class="datos">
+                    <h3>Arturo Ocampo</h3>
+                    <p>70% Perfil Completado</p>
+                    <button id="botonPerfil" type="button" onclick="menu()">Completar mi perfil</button>
+                </div>
+            </div>
+        </div>
+        <!--Termina Header LogIn-->
+
+
+        <!--Header Dashboard | Solo se muestra este header cuando aparece el dashboard-->
+        <div id="NavDashboard">
+            <div class="cont-perfil">
+                <div class="flex-center">
+                    <div class="cont-photo">
+                        <!-- 
+                                    El porcentaje se maneja partiendo un circulo en 4 secciones y se pinta cada seccion de color "NaranjaKaxan" $colorKaxan: #FF8400;
+                                    Se debe buscar y cambiar el ID "#circulo-porcentaje"
+                                -->
+                        <div id="circulo-porcentaje"></div>
+
+                        <!--Imagen del perfil como "background-image"-->
+                        <div id="circulo-foto" onclick="CheckScreenModalProfile()"></div>
+                    </div>
+                </div>
+
+                <!--Se muestra solo en la version Tablet & Mobile-->
+                <div class="datos">
+                    <h3>Arturo Ocampo</h3>
+                    <p>70% Perfil Completado</p>
+                </div>
+            </div>
+            <div class="cont-inicio">
+                <a onclick="menu()">Inicio</a>
+            </div>
+            <div class="MenuDashboard">
+                <ul>
+                    <li>
+                        <img id="img-info" src="assets/images/info.png" alt="Información general">
+                        <a id="info" onclick="MenuDashboard(1)">Información general</a>
+                    </li>
+                    <li>
+                        <img id="img-preferencias" src="assets/images/preferencias-gris.png" alt="Preferencias">
+                        <a id="preferencias" onclick="MenuDashboard(2)">Preferencias</a>
+                    </li>
+                    <li>
+                        <img id="img-historial" src="assets/images/historial-gris.png" alt="Historial de Promociones">
+                        <a id="historial" onclick="MenuDashboard(3)">Historial de promos</a>
+                    </li>
+                    <li>
+                        <img id="img-premios" src="assets/images/premios-gris.png" alt="Premios">
+                        <a id="premios" onclick="MenuDashboard(4)">Premios</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--Termina Header Dashboard-->
+
+</nav>
+
+<!-- Modal | Modal Registro-LogIn -->
+<div class="modal fade" id="ModalRegistro" tabindex="-1" role="dialog" aria-labelledby="ModalRegistro" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-registro modal-content">
+            <div class="OutModal">
+                <div>
+                    <img src="assets/images/KaxanLogo-Registro.png" alt="Kaxan">
+                </div>
+                <p>Al registrarte, aceptas nuestro<br><a>Aviso de privacidad</a> y <a>Términos y condiciones</a></p>
+            </div>
+            <div class="bodyRegistro modal-body">
+                <div class="cont-botones">
+                    <div id="boton-registro">
+                        <p onclick="botonesRegistro(1)">Regístrate</p>
+                    </div>
+                    <div id="boton-ingresa">
+                        <p onclick="botonesRegistro(2)">Inicia Sesión</p>
+                    </div>
+                </div>
+
+                <!--Inicia Registro-->
+                <div id="Registro">
+                    <p>con tus redes sociales</p>
+                    <div class="cont-botones-redes">
+                        <div id="google">
+                            <img src="assets/images/google-icono.png" alt="Google">
+                        </div>
+                        <div id="facebook">
+                            <img src="assets/images/facebook-icono.png" alt="Facebook">
+                        </div>
+                        <div id="twitter">
+                            <img src="assets/images/twitter-icono.png" alt="Twitter">
+                        </div>
+                    </div>
+                    <div class="cont-linea">
+                        <p>o</p>
+                        <div class="linea"></div>
+                    </div>
+                    <div class="form-registro">
+                        <!--Inicia formulario de Registro-->
+                        <form action="">
+
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="far fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control fix-rounded-right" placeholder="Nombre de Usuario" required>
+                            </div>
+
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="far fa-envelope"></i></span>
+                                </div>
+                                <input type="email" class="form-control fix-rounded-right" placeholder="Email" required>
+                            </div>
+
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                </div>
+                                <input type="password" class="form-control fix-rounded-right" placeholder="Contraseña" required>
+                            </div>
+
+                            <button type="submit">Crear tu cuenta Kaxan</button>
+                        </form>
+                        <!--Termina Formulario de Registro-->
+                    </div>
+                    <p>¿Ya tienes una cuenta? <a>Inicia Sesión</a></p>
+                </div>
+                <!--Termina Registro-->
+
+                <!--Inicia LogIn-->
+                <div id="Ingresa">
+                    <p>con tus redes sociales</p>
+                    <div class="cont-botones-redes">
+                        <div id="google">
+                            <img src="assets/images/google-icono.png" alt="Google">
+                        </div>
+                        <div id="facebook">
+                            <img src="assets/images/facebook-icono.png" alt="Facebook">
+                        </div>
+                        <div id="twitter">
+                            <img src="assets/images/twitter-icono.png" alt="Twitter">
+                        </div>
+                    </div>
+                    <div class="cont-linea">
+                        <p>o</p>
+                        <div class="linea"></div>
+                    </div>
+                    <div class="form-ingresa">
+                        <!--Inicia formulario de LogIn-->
+                        <form action="">
+
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="far fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control fix-rounded-right" placeholder="Nombre de Usuario" required>
+                            </div>
+
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                </div>
+                                <input type="password" class="form-control fix-rounded-right" placeholder="Contraseña" required>
+                            </div>
+
+                            <div class="flex">
+                                <div class="flex width50 checkbox">
+                                    <input type="checkbox" name="" id="">
+                                    <div>
+                                        <p>Recordarme</p>
+                                    </div>
+                                </div>
+                                <div class="width50 align-vertical">
+                                    <a>¿Olvidaste tu contraseña?</a>
+                                </div>
+                            </div>
+                            <button type="submit" [routerLink]="['/mi-cuenta']">Entrar</button>
+                        </form>
+                        <!--Termina formulario de LogIn-->
+                    </div>
+                </div>
+                <!--Termina LogIn-->
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--Termina Modal Registro | LogIn-->
+
+<!--Modal | Profile-->
+<div class="modal fade" id="profile" tabindex="-1" role="dialog" aria-labelledby="profile" aria-hidden="true">
+    <div class="modal-profile modal-dialog">
+        <div class="triangulo-profile"></div>
+        <div class="modal-profile-content modal-content">
+            <div class="modal-body">
+
+                <div class="cont-perfil-modal">
+                    <div class="flex-center-modal">
+                        <div class="cont-photo-modal">
+                            <!-- 
+                                        El porcentaje se maneja partiendo un circulo en 4 secciones y se pinta cada seccion de color "NaranjaKaxan" $colorKaxan: #FF8400;
+                                        Se debe buscar y cambiar el ID "#circulo-porcentaje"
+                                    -->
+                            <div id="circulo-porcentaje-modal"></div>
+
+                            <!--Imagen del perfil como "background-image"-->
+                            <div id="circulo-foto-modal"></div>
+                        </div>
+                    </div>
+
+                    <div class="datos-modal">
+                        <h3>Arturo Ocampo</h3>
+                        <p>70% Perfil Completado</p>
+                        <button type="button">Completar mi perfil</button>
+                        <a class="link-menu">Cerrar Sesión</a>
+                    </div>
+                    <!--Contenedor de cajas | Max 3 Cajas!-->
+                    <div class="cont-last-views">
+
+                        <!--Caja Ultima visita-->
+                        <div class="container-view">
+                            <div class="status-viewcont-menu">
+                                <div class="status-circle"></div>
+                            </div>
+                            <div class="texto-viewcont">
+                                <h3>FedEx</h3>
+                                <p>Nombre de la promoción</p>
+                            </div>
+                        </div>
+                        <!--Termina caja-->
+
+                        <!--Caja Ultima visita-->
+                        <div class="container-view">
+                            <div class="status-viewcont-menu">
+                                <div class="status-circle color-ambar"></div>
+                            </div>
+                            <div class="texto-viewcont">
+                                <h3>FedEx</h3>
+                                <p>Nombre de la promoción</p>
+                            </div>
+                        </div>
+                        <!--Termina caja-->
+
+                        <!--Caja Ultima visita-->
+                        <div class="container-view">
+                            <div class="status-viewcont-menu">
+                                <div class="status-circle color-rojo"></div>
+                            </div>
+                            <div class="texto-viewcont">
+                                <h3>FedEx</h3>
+                                <p>Nombre de la promoción</p>
+                            </div>
+                        </div>
+                        <!--Termina caja-->
+
+                        <!--Caja Ultima visita-->
+                        <div class="container-view">
+                            <div class="status-viewcont-menu">
+                                <div class="status-circle"></div>
+                            </div>
+                            <div class="texto-viewcont">
+                                <h3>FedEx</h3>
+                                <p>Nombre de la promoción</p>
+                            </div>
+                        </div>
+                        <!--Termina caja-->
+
+                        <!--Caja Ultima visita-->
+                        <div class="container-view">
+                            <div class="status-viewcont-menu">
+                                <div class="status-circle"></div>
+                            </div>
+                            <div class="texto-viewcont">
+                                <h3>Titulo largo, solo se veran los primeros caracteres.</h3>
+                                <p>Nombre de la promoción, En caso de tener muchos caracteres, se hara un scroll como este.</p>
+                            </div>
+                        </div>
+                        <!--Termina caja-->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- / Termina Modal | Profile-->
+
+
+
+<!--Modal | Notificaciones-->
+<div class="modal fade" id="notificaciones" tabindex="-1" role="dialog" aria-labelledby="notificaciones" aria-hidden="true">
+    <div class="modal-notificaciones modal-dialog">
+        <div class="triangulo-notificaciones"></div>
+        <div class="modal-notificaciones-content modal-content">
+            <div class="modal-body">
+                <div class="TituloNotificaciones">
+                    <h4>Notificaciones</h4>
+                    <div>
+                        <a class="text-borrar">Borrar todo</a>
+                    </div>
+                </div>
+                <div class="cont-last-notifications">
+
+                    <!--Caja Notificación-->
+                    <div class="container-view">
+                        <div class="texto-viewcont">
+                            <div class="cerrar">
+                                <a>x</a>
+                            </div>
+                            <h3>Bienvenido</h3>
+                            <p>Recuerda completar tu perfil, para obtener mejores resultados.</p>
+                        </div>
+                    </div>
+                    <!--Termina caja-->
+
+                    <!--Caja Notificación-->
+                    <div class="container-view">
+                        <div class="texto-viewcont">
+                            <div class="cerrar">
+                                <a>x</a>
+                            </div>
+                            <h3>¡Todavia tienes tiempo!</h3>
+                            <p>La promoción esta por expirar, participa antes del 28 de Agosto 2020</p>
+                        </div>
+                    </div>
+                    <!--Termina caja-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- / Termina Modal | Notificaciones-->

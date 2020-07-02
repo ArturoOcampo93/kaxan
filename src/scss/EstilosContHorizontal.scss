@@ -1,0 +1,214 @@
+#cont-horizontal {
+    width: 100%;
+    background-color: $grisKaxan;
+    .cont-titulo {
+        width: 90%;
+        padding: 6%;
+        padding-bottom: 3%;
+        h3 {
+            margin: 0%;
+            font-size: 2em;
+            font-weight: 600;
+        }
+        p {
+            margin: 0%;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+    }
+    .cont-center {
+        display: flex;
+        justify-content: center;
+        .cont-overflow {
+            width: 1450px;
+            margin-bottom: 3%;
+            overflow: hidden;
+            .cont-cajas {
+                display: flex;
+                position: relative;
+                left: 0px;
+            }
+        }
+    }
+}
+
+.cont-flechas {
+    position: relative;
+    top: -250px;
+}
+
+.flechaDerecha {
+    position: absolute;
+    right: 50px;
+}
+
+.flechaIzquierda {
+    position: absolute;
+    left: 50px;
+}
+
+@media only screen and (max-width: 1610px) {
+    .cont-center {
+        .cont-overflow {
+            width: 1160px !important;
+            margin-bottom: 3%;
+            overflow: hidden;
+        }
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .cont-center {
+        .cont-overflow {
+            width: 870px !important;
+            margin-bottom: 3%;
+            overflow: hidden;
+        }
+    }
+}
+
+@media only screen and (max-width: 1025px) {
+    .cont-center {
+        .cont-overflow {
+            width: 580px !important;
+            margin-bottom: 3%;
+            overflow: hidden;
+        }
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .cont-center {
+        .cont-overflow {
+            width: 290px !important;
+            margin-bottom: 3%;
+            overflow: hidden;
+        }
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .cont-flechas {
+        position: relative;
+        top: -250px;
+    }
+    .flechaDerecha {
+        position: absolute;
+        right: 10px;
+    }
+    .flechaIzquierda {
+        position: absolute;
+        left: 10px;
+    }
+}
+
+
+/*
+*
+* EStilos ContHorizontal-Recomendaciones
+*
+*/
+
+#cont-horizontal-recomendaciones {
+    width: 100%;
+    background-color: $gris-2Kaxan;
+    .cont-titulo {
+        width: 90%;
+        padding: 6%;
+        padding-bottom: 3%;
+        h3 {
+            margin: 0%;
+            font-size: 2em;
+            font-weight: 600;
+        }
+        p {
+            margin: 0%;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+    }
+    .cont-center {
+        display: flex;
+        justify-content: center;
+        .cont-overflow {
+            width: 1450px;
+            margin-bottom: 3%;
+            overflow: hidden;
+            .cont-cajas {
+                display: flex;
+                position: relative;
+                left: 0px;
+            }
+        }
+    }
+}
+
+.cont-flechas {
+    position: relative;
+    top: -250px;
+}
+
+.flechaDerecha {
+    position: absolute;
+    right: 50px;
+}
+
+.flechaIzquierda {
+    position: absolute;
+    left: 50px;
+}
+
+@media only screen and (max-width: 1610px) {
+    .cont-center {
+        .cont-overflow {
+            width: 1160px !important;
+            margin-bottom: 3%;
+            overflow: hidden;
+        }
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .cont-center {
+        .cont-overflow {
+            width: 870px !important;
+            margin-bottom: 3%;
+            overflow: hidden;
+        }
+    }
+}
+
+@media only screen and (max-width: 1025px) {
+    .cont-center {
+        .cont-overflow {
+            width: 580px !important;
+            margin-bottom: 3%;
+            overflow: hidden;
+        }
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .cont-center {
+        .cont-overflow {
+            width: 290px !important;
+            margin-bottom: 3%;
+            overflow: hidden;
+        }
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .cont-flechas {
+        position: relative;
+        top: -250px;
+    }
+    .flechaDerecha {
+        position: absolute;
+        right: 10px;
+    }
+    .flechaIzquierda {
+        position: absolute;
+        left: 10px;
+    }
+}
