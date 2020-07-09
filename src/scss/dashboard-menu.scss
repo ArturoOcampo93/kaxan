@@ -1,0 +1,106 @@
+// Importación de las variables y parametros generales
+@import 'variables';
+#dashboard-menu {
+    background-color: $grisDashboardKaxan;
+    padding-top: 160px;
+    width: 350px;
+    height: 100%;
+    margin-bottom: 0px;
+    .flex-center {
+        display: flex;
+        justify-content: center;
+    }
+    .cont-perfil {
+        width: 100%;
+        display: block;
+        .datos {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            h3 {
+                width: 100%;
+                margin-top: 10px;
+                margin-bottom: 0px;
+                padding: 0% 10% 0% 10%;
+            }
+            p {
+                margin-bottom: 25px;
+            }
+            button {
+                height: 50px;
+                padding-left: 30px;
+                padding-right: 30px;
+                background-color: $colorKaxan;
+                color: white;
+                font-size: 14pt;
+                font-weight: 500;
+                border-radius: 10px 10px 10px 10px;
+                -moz-border-radius: 10px 10px 10px 10px;
+                -webkit-border-radius: 10px 10px 10px 10px;
+                border: 0px solid #000000;
+            }
+            #botonPerfil {
+                max-width: 300px;
+                font-size: 13pt;
+            }
+        }
+    }
+    .cont-photo {
+        #circulo-porcentaje {
+            width: 0;
+            height: 0;
+            border-right: 80px solid $colorKaxan !important;
+            border-top: 80px solid $colorKaxan !important;
+            border-left: 80px solid white !important;
+            border-bottom: 80px solid $colorKaxan !important;
+            -moz-border-radius: 100%;
+            -webkit-border-radius: 100%;
+            border-radius: 100%;
+            transform: rotate(45deg);
+        }
+        #circulo-foto {
+            width: 120px !important;
+            height: 120px !important;
+            -moz-border-radius: 120px !important;
+            -webkit-border-radius: 120px !important;
+            border-radius: 120px !important;
+            background-color: white;
+            /* La foto de perfil entra como background en el circulo */
+            background-image: url(images/profile.png);
+            /* Estas propiedades redimencionan la imagen al tamaño del circulo, centran la imagen y no la repiten */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* Pone el circulo encima del circulo de porcentaje */
+            position: absolute;
+            margin-left: 19px !important;
+            margin-top: -140px;
+        }
+    }
+    .menu-dashboard {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        color: $negroKaxan;
+        ul {
+            list-style: none;
+            padding-left: 10px;
+            li {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                a {
+                    color: $negroKaxan;
+                    font-weight: 400 !important;
+                    font-size: 12pt !important;
+                    margin-left: 10px !important;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    #dashboard-menu {
+        display: none;
+    }
+}

@@ -1,0 +1,390 @@
+    // Importación de las variables y parametros generales
+    @import 'variables';
+    .Background-Dashboard {
+        width: 100%;
+        height: 100%;
+        background-image: url('images/backgrounds/trama-x.png');
+        padding-top: 200px;
+        padding-left: 50px;
+        h2 {
+            color: white;
+        }
+        p {
+            color: white;
+            font-size: 14pt;
+            font-weight: 600;
+        }
+        input {
+            width: 100%;
+            height: 45px;
+            border: 1px solid $negroKaxan;
+            padding-left: 20px;
+            /* Bordes Redondos */
+            border-radius: 15px 15px 15px 15px;
+            -moz-border-radius: 15px 15px 15px 15px;
+            -webkit-border-radius: 15px 15px 15px 15px;
+        }
+        select {
+            width: 100%;
+            height: 45px;
+            border: 1px solid $negroKaxan;
+            padding-left: 20px;
+            /* Bordes Redondos */
+            border-radius: 15px 15px 15px 15px;
+            -moz-border-radius: 15px 15px 15px 15px;
+            -webkit-border-radius: 15px 15px 15px 15px;
+        }
+    }
+    
+    .caja-dashboard {
+        max-width: 650px;
+        background-color: white;
+        padding: 30px;
+        margin: 25px;
+        margin-left: 0px;
+        /* Bordes Redondos */
+        border-radius: 20px 20px 20px 20px;
+        -moz-border-radius: 20px 20px 20px 20px;
+        -webkit-border-radius: 20px 20px 20px 20px;
+        border: 0px solid #000000;
+        /* Sombras */
+        -webkit-box-shadow: 6px 10px 14px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 6px 10px 14px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 6px 10px 14px 0px rgba(0, 0, 0, 0.75);
+    }
+    
+    .text-input {
+        margin-bottom: 5px;
+        padding-left: 10px;
+        font-weight: 600;
+    }
+    
+    .input-100 {
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .input-50 {
+        display: flex;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        .col-md-6,
+        .col-12 {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .padding-left-none {
+            padding-left: 0px !important;
+        }
+        .padding-right-none {
+            padding-right: 0px !important;
+        }
+    }
+    
+    .box-texto {
+        margin-top: 20px;
+        margin-bottom: 0px;
+        display: flex;
+        justify-content: flex-end;
+        a {
+            color: $colorKaxan;
+            font-weight: 600;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: $rojoKaxan;
+        }
+    }
+    
+    .cont-boton-dashboard {
+        max-width: 650px;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 50px;
+        button {
+            width: 300px;
+        }
+    }
+    
+    @media only screen and (max-width: 990px) {
+        .Background-Dashboard {
+            padding-left: 25px;
+        }
+        .caja-dashboard {
+            max-width: 100%;
+        }
+        .input-50 {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            .col-lg-6,
+            .col-md-12 {
+                padding-left: 0px;
+                padding-right: 0px;
+                input {
+                    margin-bottom: 15px;
+                }
+            }
+            .padding-left-none {
+                padding-left: 0px !important;
+            }
+            .padding-right-none {
+                padding-right: 0px !important;
+            }
+        }
+        .margin-none {
+            margin-bottom: 0px !important;
+        }
+        .cont-boton-dashboard {
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            button {
+                width: 300px;
+            }
+        }
+    }
+    /*
+*
+* Dashboard Preferencias
+*
+*/
+    
+    .caja-dashboard-preferencias {
+        max-width: 800px;
+        padding: 20px;
+        background-color: white;
+        display: flex;
+        flex-wrap: wrap;
+        /* Bordes Redondos */
+        border-radius: 20px 20px 20px 20px;
+        -moz-border-radius: 20px 20px 20px 20px;
+        -webkit-border-radius: 20px 20px 20px 20px;
+        border: 0px solid #000000;
+        /* Sombras */
+        -webkit-box-shadow: 6px 10px 14px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 6px 10px 14px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 6px 10px 14px 0px rgba(0, 0, 0, 0.75);
+        .img-box {
+            width: 170px;
+            margin: 10px;
+            .preferencia {
+                width: 170px;
+                height: 170px;
+                .cont-texto-preferencias {
+                    width: 174px;
+                    height: 174px;
+                    background-color: #00000060;
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    font-weight: 600;
+                    font-size: 14pt;
+                    text-align: center;
+                    cursor: pointer;
+                    p {
+                        margin: 0%;
+                    }
+                }
+                .check-icon {
+                    display: none;
+                }
+                .cont-texto-preferencias:hover {
+                    background-color: #ff840060;
+                }
+            }
+        }
+    }
+    
+    .cont-boton-dashboard-preferencias {
+        max-width: 800px;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 50px;
+        button {
+            width: 300px;
+        }
+    }
+    
+    @media only screen and (max-width: 1198px) {
+        .caja-dashboard-preferencias {
+            max-width: 612px;
+        }
+        .cont-boton-dashboard-preferencias {
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    
+    @media only screen and (max-width: 1008px) {
+        .caja-dashboard-preferencias {
+            max-width: 421px;
+        }
+    }
+    
+    @media only screen and (max-width: 990px) {
+        .caja-dashboard-preferencias {
+            max-width: 800px;
+            margin-right: 30px;
+        }
+        .Background-Dashboard {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+    
+    @media only screen and (max-width: 854px) {
+        .caja-dashboard-preferencias {
+            max-width: 612px;
+        }
+    }
+    
+    @media only screen and (max-width: 664px) {
+        .caja-dashboard-preferencias {
+            max-width: 421px;
+        }
+    }
+    
+    @media only screen and (max-width: 474px) {
+        .caja-dashboard-preferencias {
+            max-width: 233px;
+        }
+    }
+    /*
+*
+* Historial | Dasboard
+*
+*/
+    
+    .historial {
+        h3 {
+            padding-left: 15px;
+        }
+        table {
+            width: 100%;
+            thead {
+                td {
+                    font-weight: 600;
+                    text-align: center;
+                    border-left: 1px solid black;
+                    border-right: 1px solid black;
+                }
+                td:first-child {
+                    border-left: none;
+                }
+                td:last-child {
+                    border-right: none;
+                }
+            }
+            tbody {
+                text-align: center;
+                td {
+                    a:hover {
+                        color: $colorKaxan;
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .status-viewcont-menu {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .status-circle {
+                    width: 20px;
+                    height: 20px;
+                    -moz-border-radius: 20px;
+                    -webkit-border-radius: 20px;
+                    border-radius: 20px;
+                    background: $verdeKaxan;
+                    margin: 10px;
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+    
+    @media only screen and (max-width: 590px) {
+        table {
+            thead {
+                td {
+                    border: none !important;
+                    font-size: 12pt;
+                }
+                td:last-child {
+                    display: none;
+                }
+            }
+            tbody {
+                font-size: 10pt;
+                td:last-child {
+                    display: none;
+                }
+            }
+        }
+    }
+    /*
+    *
+    * Dashboard | Premios
+    *
+    */
+    
+    .premios {
+        display: flex;
+        .cont-copa {
+            img {
+                width: 100%;
+                padding: 10px;
+                padding-right: 20px;
+            }
+        }
+        .cont-text-premios {
+            div {
+                border-bottom: 1px solid $negroKaxan;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            p {
+                margin: 0%;
+                color: $negroKaxan;
+                font-weight: 400;
+            }
+            .text-patrocinador {
+                color: $rojoKaxan;
+                font-weight: 600;
+            }
+            .titulo {
+                font-weight: 500;
+            }
+            .text-bold {
+                font-weight: 600;
+            }
+            button {
+                width: 200px;
+                height: 35px;
+            }
+        }
+    }
+    
+    .linea-premios {
+        width: 95%;
+        border-bottom: 1px solid white;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    
+    .titulo-premios-dashboard {
+        color: white;
+        font-weight: 600;
+    }
+    
+    @media only screen and (max-width: 500px) {
+        .cont-copa {
+            display: none;
+        }
+    }

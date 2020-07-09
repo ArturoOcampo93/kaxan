@@ -133,3 +133,66 @@ function MenuDashboard(x) {
             console.log('Tienes un error en la funcion MenuDashboard');
     }
 }
+
+function MenuDashboardDesktop(x) {
+    switch (x) {
+        case 1:
+            document.getElementById('img-info-menu').src = "assets/images/info.png";
+            document.getElementById('info-menu').style.color = "#FF8400";
+
+            document.getElementById('img-preferencias-menu').src = "assets/images/preferencias-gris.png";
+            document.getElementById('-menu').style.color = "black";
+
+            document.getElementById('img-historial-menu').src = "assets/images/historial-gris.png";
+            document.getElementById('historial-menu').style.color = "black";
+
+            document.getElementById('img-premios-menu').src = "assets/images/premios-gris.png";
+            document.getElementById('premios-menu').style.color = "black";
+
+            break;
+        case 2:
+            document.getElementById('img-info-menu').src = "assets/images/info-gris.png";
+            document.getElementById('info-menu').style.color = "black";
+
+            document.getElementById('img-preferencias-menu').src = "assets/images/preferencias.png";
+            document.getElementById('preferencias-menu').style.color = "#FF8400";
+
+            document.getElementById('img-historial-menu').src = "assets/images/historial-gris.png";
+            document.getElementById('historial-menu').style.color = "black";
+
+            document.getElementById('img-premios-menu').src = "assets/images/premios-gris.png";
+            document.getElementById('premios-menu').style.color = "black";
+
+            break;
+        case 3:
+            document.getElementById('img-info-menu').src = "assets/images/info-gris.png";
+            document.getElementById('info-menu').style.color = "black";
+
+            document.getElementById('img-preferencias-menu').src = "assets/images/preferencias-gris.png";
+            document.getElementById('preferencias-menu').style.color = "black";
+
+            document.getElementById('img-historial-menu').src = "assets/images/historial.png";
+            document.getElementById('historial-menu').style.color = "#FF8400";
+
+            document.getElementById('img-premios-menu').src = "assets/images/premios-gris.png";
+            document.getElementById('premios-menu').style.color = "black";
+
+            break;
+        case 4:
+            document.getElementById('img-info-menu').src = "assets/images/info-gris.png";
+            document.getElementById('info-menu').style.color = "black";
+
+            document.getElementById('img-preferencias-menu').src = "assets/images/preferencias-gris.png";
+            document.getElementById('preferencias-menu').style.color = "black";
+
+            document.getElementById('img-historial-menu').src = "assets/images/historial-gris.png";
+            document.getElementById('historial-menu').style.color = "black";
+
+            document.getElementById('img-premios-menu').src = "assets/images/premios.png";
+            document.getElementById('premios-menu').style.color = "#FF8400";
+
+            break;
+        default:
+            console.log('Tienes un error en la funcion MenuDashboard-Desktop');
+    }
+}

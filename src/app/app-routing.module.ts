@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { MiCuentaComponent } from './pages/mi-cuenta/mi-cuenta.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+
 
 const routes: Routes = [
   {
@@ -12,6 +14,10 @@ const routes: Routes = [
   {
     path: 'mi-cuenta',
     component: MiCuentaComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
   },
   {
     path: '**',

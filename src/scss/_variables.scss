@@ -14,6 +14,7 @@ $colorFlechas: #707070;
 // Generales
 input:focus,
 input.form-control:focus,
+select:focus,
 button:focus {
     outline: none !important;
     outline-width: 0 !important;

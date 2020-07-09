@@ -15,6 +15,12 @@ import { ContGeneralComponent } from './components/cont-general/cont-general.com
 import { BoxComponent } from './components/box/box.component';
 import { ContHorizontalComponent } from './components/cont-horizontal/cont-horizontal.component';
 import { ContHorizontalRecomendacionesComponent } from './components/cont-horizontal-recomendaciones/cont-horizontal-recomendaciones.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { DashboardMenuComponent } from './components/dashboard-menu/dashboard-menu.component';
+import { DashboardInfogeneralComponent } from './components/dashboard-infogeneral/dashboard-infogeneral.component';
+import { DashboardPreferenciasComponent } from './components/dashboard-preferencias/dashboard-preferencias.component';
+import { DashboardHistorialComponent } from './components/dashboard-historial/dashboard-historial.component';
+import { DashboardPremiosComponent } from './components/dashboard-premios/dashboard-premios.component';
 
 
 @NgModule({
@@ -29,7 +35,13 @@ import { ContHorizontalRecomendacionesComponent } from './components/cont-horizo
     ContGeneralComponent,
     BoxComponent,
     ContHorizontalComponent,
-    ContHorizontalRecomendacionesComponent
+    ContHorizontalRecomendacionesComponent,
+    DashboardComponent,
+    DashboardMenuComponent,
+    DashboardInfogeneralComponent,
+    DashboardPreferenciasComponent,
+    DashboardHistorialComponent,
+    DashboardPremiosComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, ScrollToModule.forRoot()
