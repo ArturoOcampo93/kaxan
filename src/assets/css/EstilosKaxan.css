@@ -118,7 +118,7 @@ nav {
 
 /* Display | Flex */
 #NavLogIn {
-  display: none;
+  /*display: none;*/
   margin-right: 30px; }
   #NavLogIn .cont-alertas {
     margin-right: 45px;
@@ -204,7 +204,7 @@ nav {
       margin-bottom: 100px;
       /*Display | flex*/ }
       nav #cont-menu #NavLogIn {
-        display: none;
+        /*display: none;*/
         flex-direction: column-reverse;
         justify-content: center;
         margin-bottom: 50px; }
@@ -1073,3 +1073,6 @@ button {
     display: none; } }
 
 /*# sourceMappingURL=EstilosKaxan.css.map */
+
+
+

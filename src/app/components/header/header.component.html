@@ -46,7 +46,7 @@
 
 
         <!--Header General | Se muestra cuando no esta logeado-->
-        <div id="NavGeneral">
+        <div id="NavGeneral" *ngIf="!isLogin">
             <ul>
                 <div>
                     <img class="icono-menu-general" src="assets/images/icono-registro.png" alt="Registro">
@@ -62,7 +62,7 @@
 
 
         <!--Header LogIn | Se muestra cuando el usuario ya hizo Log In -->
-        <div id="NavLogIn">
+        <div id="NavLogIn" *ngIf="isLogin">
             <div class="cont-alertas" onclick="CheckScreenModalNotificaciones()">
                 <div id="cont-num-alertas">+1</div>
                 <img src="assets/images/icono-alertas.png" alt="Icono-Alertas">
@@ -137,8 +137,8 @@
 
                 <!--Se muestra solo en la version Tablet & Mobile-->
                 <div class="datos">
-                    <h3>Arturo Ocampo</h3>
-                    <p>70% Perfil Completado</p>
+                    <h3>{{ this.vistaUsuario.userName }}</h3>
+                    <p>{{ this.vistaUsuario.percentage }}% Perfil Completado</p>
                     <button id="botonPerfil" type="button" onclick="menu()">Completar mi perfil</button>
                 </div>
             </div>
@@ -164,8 +164,8 @@
 
                 <!--Se muestra solo en la version Tablet & Mobile-->
                 <div class="datos">
-                    <h3>Arturo Ocampo</h3>
-                    <p>70% Perfil Completado</p>
+                    <h3>{{ this.vistaUsuario.userName }}</h3>
+                    <p>{{ this.vistaUsuario.percentage }}% Perfil Completado</p>
                 </div>
             </div>
             <div class="cont-inicio">
@@ -201,11 +201,16 @@
 <div class="modal fade" id="ModalRegistro" tabindex="-1" role="dialog" aria-labelledby="ModalRegistro" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-registro modal-content">
+            
             <div class="OutModal">
                 <div>
                     <img src="assets/images/KaxanLogo-Registro.png" alt="Kaxan">
                 </div>
                 <p>Al registrarte, aceptas nuestro<br><a>Aviso de privacidad</a> y <a>Términos y condiciones</a></p>
+                
+                <button type="button" class="close" #closebutton data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="bodyRegistro modal-body">
                 <div class="cont-botones">
@@ -221,15 +226,13 @@
                 <div id="Registro">
                     <p>con tus redes sociales</p>
                     <div class="cont-botones-redes">
-                        <div id="google">
-                            <img src="assets/images/google-icono.png" alt="Google">
+                        <div id="google" (click)="loginWithGoogle('registro')">
+                            <img src="assets/images/google-icono.png"  alt="Google">
                         </div>
-                        <div id="facebook">
-                            <img src="assets/images/facebook-icono.png" alt="Facebook">
+                        <div id="facebook" (click)="loginWithFacebook('registro')">
+                            <img src="assets/images/facebook-icono.png"  alt="Facebook">
                         </div>
-                        <div id="twitter">
-                            <img src="assets/images/twitter-icono.png" alt="Twitter">
-                        </div>
+
                     </div>
                     <div class="cont-linea">
                         <p>o</p>
@@ -237,34 +240,69 @@
                     </div>
                     <div class="form-registro">
                         <!--Inicia formulario de Registro-->
-                        <form action="">
 
+                        <form [formGroup]="registroForm" (ngSubmit)="registro()">
+
+                            <!-- nombre -->
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="far fa-user"></i></span>
                                 </div>
-                                <input type="text" class="form-control fix-rounded-right" placeholder="Nombre de Usuario" required>
+                                <input type="text" class="form-control fix-rounded-right" placeholder="Nombre de Usuario" required id="nombre" name="nombre" formControlName="nombre" 
+                                [class.is-invalid]="registroForm.get('nombre').invalid  && registroForm.get('nombre').touched"
+                                [class.is-valid]="registroForm.get('nombre').valid && registroForm.get('nombre').touched"
+                                
+                                >
                             </div>
-
+                            <div class="text-left">
+                                <span class="text-danger" *ngIf="isSubmit && (errorControl.nombre.errors?.required || errorControl.nombre.errors?.pattern)">
+                                    Este campo es requerido, solo se permiten letras.
+                                </span>
+                                
+                            </div>
+                            
+                            <!-- correo -->
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="far fa-envelope"></i></span>
                                 </div>
-                                <input type="email" class="form-control fix-rounded-right" placeholder="Email" required>
+                                <input type="email" class="form-control fix-rounded-right" placeholder="Email" name="email" required formControlName="email"
+                                [class.is-invalid]="registroForm.get('email').invalid && registroForm.get('email').touched"
+                                [class.is-valid]="registroForm.get('email').valid && registroForm.get('email').touched"
+                                >                        
                             </div>
-
+                            <div class="text-left">
+                                <span class="text-danger"
+                                    *ngIf="isSubmit && (errorControl.email.errors?.required || errorControl.email.errors?.pattern)">
+                                    Este campo es requerido y debe ser un correo valido.
+                                </span>
+                                
+                            </div>
+                            
+                            <!-- contraseña -->
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-lock"></i></span>
                                 </div>
-                                <input type="password" class="form-control fix-rounded-right" placeholder="Contraseña" required>
+                                <input type="password" class="form-control fix-rounded-right" placeholder="Contraseña" name="password" required formControlName="password"
+                                [class.is-invalid]="registroForm.get('password').invalid && registroForm.get('password').touched"
+                                [class.is-valid]="registroForm.get('password').valid && registroForm.get('password').touched"
+                                >
                             </div>
-
+                            <div class="text-left">
+                                <span class="text-danger"
+                                    *ngIf="(isSubmit || registroForm.get('password').touched) && (errorControl.password.errors?.required || errorControl.password.errors?.pattern)">
+                                    Este campo es requerido, al menos 6 caracteres, un numero, una mayuscula y un simbolo ($@$#%&-) .
+                                </span>
+                            
+                            </div>
+                        
                             <button type="submit">Crear tu cuenta Kaxan</button>
                         </form>
+
                         <!--Termina Formulario de Registro-->
                     </div>
-                    <p>¿Ya tienes una cuenta? <a>Inicia Sesión</a></p>
+                    
                 </div>
                 <!--Termina Registro-->
 
@@ -272,15 +310,13 @@
                 <div id="Ingresa">
                     <p>con tus redes sociales</p>
                     <div class="cont-botones-redes">
-                        <div id="google">
+                        <div id="google" (click)="loginWithGoogle('login')">
                             <img src="assets/images/google-icono.png" alt="Google">
                         </div>
-                        <div id="facebook">
+                        <div id="facebook" (click)="loginWithFacebook('login')">
                             <img src="assets/images/facebook-icono.png" alt="Facebook">
                         </div>
-                        <div id="twitter">
-                            <img src="assets/images/twitter-icono.png" alt="Twitter">
-                        </div>
+
                     </div>
                     <div class="cont-linea">
                         <p>o</p>
@@ -288,34 +324,54 @@
                     </div>
                     <div class="form-ingresa">
                         <!--Inicia formulario de LogIn-->
-                        <form action="">
+                        <form  [formGroup]="loginForm" (ngSubmit)="login()">
 
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="far fa-user"></i></span>
                                 </div>
-                                <input type="text" class="form-control fix-rounded-right" placeholder="Nombre de Usuario" required>
+                                <input type="text" class="form-control fix-rounded-right" placeholder="Nombre de Usuario" id="emailLogin"  name="emailLogin" required formControlName="emailLogin"
+                                [class.is-invalid]="loginForm.get('emailLogin').invalid && loginForm.get('emailLogin').touched"
+                                [class.is-valid]="loginForm.get('emailLogin').valid && loginForm.get('emailLogin').touched"
+                                >
+                            </div>
+                            <div class="text-left">
+                                <span class="text-danger"
+                                    *ngIf="isSubmitLogin && (errorControlLogin.emailLogin.errors?.required || errorControlLogin.emailLogin.errors?.pattern)">
+                                    Este campo es requerido y debe ser un correo valido.
+                                </span>
+                            
                             </div>
 
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-lock"></i></span>
                                 </div>
-                                <input type="password" class="form-control fix-rounded-right" placeholder="Contraseña" required>
+                                <input type="password" class="form-control fix-rounded-right" placeholder="Contraseña" id="contrasenaLogin" name="contrasenaLogin" required formControlName="passwordLogin"
+                                [class.is-invalid]="loginForm.get('passwordLogin').invalid && loginForm.get('passwordLogin').touched"
+                                [class.is-valid]="loginForm.get('passwordLogin').valid && loginForm.get('passwordLogin').touched"
+                                >
+                            </div>
+                            <div class="text-left">
+                                <span class="text-danger"
+                                    *ngIf="(isSubmitLogin || loginForm.get('passwordLogin').touched) && (errorControlLogin.passwordLogin.errors?.required || errorControlLogin.passwordLogin.errors?.pattern)">
+                                    Este campo es requerido, al menos 6 caracteres, un numero, una mayuscula y un simbolo ($@$#%&-) .
+                                </span>
+                            
                             </div>
 
                             <div class="flex">
                                 <div class="flex width50 checkbox">
-                                    <input type="checkbox" name="" id="">
+                                    <input type="checkbox" name="recuerda" id="recuerda"  (change)="isCheckedRecuerda()" formControlName="recuerda" >
                                     <div>
                                         <p>Recordarme</p>
                                     </div>
                                 </div>
                                 <div class="width50 align-vertical">
-                                    <a>¿Olvidaste tu contraseña?</a>
+                                    <a (click)="olvidasteContrasen()">¿Olvidaste tu contraseña?</a>
                                 </div>
                             </div>
-                            <button type="submit" [routerLink]="['/mi-cuenta']">Entrar</button>
+                            <button type="submit" >Entrar</button>
                         </form>
                         <!--Termina formulario de LogIn-->
                     </div>
@@ -350,10 +406,10 @@
                     </div>
 
                     <div class="datos-modal">
-                        <h3>Arturo Ocampo</h3>
-                        <p>70% Perfil Completado</p>
-                        <button type="button">Completar mi perfil</button>
-                        <a class="link-menu">Cerrar Sesión</a>
+                        <h3>{{ this.vistaUsuario.userName }}</h3>
+                        <p>{{ this.vistaUsuario.percentage }}% Perfil Completado</p>
+                        <button type="button" (click)="irPerfil()">Completar mi perfil</button>
+                        <a class="link-menu" (click)="kaxanOut()">Cerrar Sesión</a>
                     </div>
                     <!--Contenedor de cajas | Max 3 Cajas!-->
                     <div class="cont-last-views">
@@ -473,3 +529,134 @@
     </div>
 </div>
 <!-- / Termina Modal | Notificaciones-->
+
+
+<!-- Modal | Modal Registro-LogIn -->
+<div class="modal fade" id="ModalRecupera" tabindex="-1" role="dialog" aria-labelledby="ModalRecupera"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-registro modal-content">
+
+            <div class="OutModal">
+                <div>
+                    <img src="assets/images/KaxanLogo-Registro.png" alt="Kaxan">
+                </div>
+            </div>
+            <div class="bodyRegistro modal-body">
+                <div class="cont-botones">
+                    <div  [ngClass]="{'activeButtons': !recuperaCodigo }" (click)="recuperaCodigoVista(true)" >
+                        <p  >Recupera contraseña</p>
+                    </div>
+                    <div   [ngClass]="{'activeButtons': recuperaCodigo }"  (click)="recuperaCodigoVista(false)">
+                        <p >Ya cuento con un código</p>
+                    </div>
+                </div>
+
+                <!--Inicia recupera codigo-->
+                <div class="cont-recupera" id="recupera"  *ngIf='recuperaCodigo'>
+                    <p>¿No recuerdas tu contraseña? Escribe el correo con el que te registraste y te enviaremos un código de verificacion para que cambies tu contraseña: </p>
+
+                    <div class="form-recupera">
+                        <!--Inicia formulario de recupera codigo-->
+
+                        <form [formGroup]="codigoForm" (ngSubmit)="getCodigo()">
+                            <!-- correo -->
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="far fa-envelope"></i></span>
+                                </div>
+                                <input type="email" class="form-control fix-rounded-right" placeholder="Email" name="emailCodigo" required  formControlName="emailCodigo" 
+                                [class.is-invalid]="codigoForm.get('emailCodigo').invalid  && codigoForm.get('emailCodigo').touched"
+                                [class.is-valid]="codigoForm.get('emailCodigo').valid && codigoForm.get('emailCodigo').touched"
+                                >
+                            </div>
+                            <div class="text-left">
+                                <span class="text-danger"
+                                    *ngIf="isSubmitCodigo && (errorControlCodigo.emailCodigo.errors?.required || errorControlCodigo.emailCodigo.errors?.pattern)">
+                                    Este campo es requerido y debe ser un correo valido.
+                                </span>
+
+                            </div>
+                            <button type="submit">Envia un código de verificacion</button>
+                        </form>
+
+                        <!--Termina Formulario de recupera codigo-->
+                    </div>
+
+                </div>
+                <!--Termina recupera codigo-->
+
+                <!--Inicia recupera password-->
+                <div class="cont-recupera" id="ingresaCodigo" *ngIf='!recuperaCodigo'>
+                    <p>ya cuentas con un código ahora puedes modificar tu contraseña</p>
+
+                    <div class="form-recupera">
+                        <!--Inicia formulario de recupera password-->
+                        <form [formGroup]="recuperaForm" (ngSubmit)="getContrasena()">
+
+                            <!-- correo -->
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="far fa-envelope"></i></span>
+                                </div>
+                                <input type="email" class="form-control fix-rounded-right" placeholder="Email" name="emailRegistrado" required
+                                    formControlName="emailRegistrado"
+                                    [class.is-invalid]="recuperaForm.get('emailRegistrado').invalid  && recuperaForm.get('emailRegistrado').touched"
+                                    [class.is-valid]="recuperaForm.get('emailRegistrado').valid && recuperaForm.get('emailRegistrado').touched">
+                            </div>
+                            <div class="text-left">
+                                <span class="text-danger"
+                                    *ngIf="isSubmitRecupera && (errorControlRecupera.emailRegistrado.errors?.required || errorControlRecupera.emailRegistrado.errors?.pattern)">
+                                    Este campo es requerido y debe ser un correo valido.
+                                </span>
+                            
+                            </div>
+                            <!-- codigo -->
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="far fa-eye"></i></span>
+                                </div>
+                                <input type="text" class="form-control fix-rounded-right"
+                                    placeholder="Código de recuperacion" id="codigo" name="codigo" required formControlName="codigo"
+                                [class.is-invalid]="recuperaForm.get('codigo').invalid && recuperaForm.get('codigo').touched"
+                                [class.is-valid]="recuperaForm.get('codigo').valid && recuperaForm.get('codigo').touched"
+                                    >
+                            </div>
+                            <div class="text-left">
+                                <span class="text-danger"
+                                    *ngIf="isSubmitRecupera && (errorControlRecupera.codigo.errors?.required || errorControlRecupera.codigo.errors?.pattern)">
+                                    Introduce tu código de verificacion de 6 digitos.
+                                </span>
+
+                            </div>
+                            <!-- contrasena -->
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                </div>
+                                <input type="password" class="form-control fix-rounded-right" placeholder="Nueva contraseña"
+                                     name="passwordCodigo" required formControlName="passwordCodigo"
+                                [class.is-invalid]="recuperaForm.get('passwordCodigo').invalid && recuperaForm.get('passwordCodigo').touched"
+                                [class.is-valid]="recuperaForm.get('passwordCodigo').valid && recuperaForm.get('passwordCodigo').touched" >
+                            </div>
+                            <div class="text-left">
+                                <span class="text-danger"
+                                    *ngIf="(isSubmitRecupera || recuperaForm.get('passwordCodigo').touched) && (errorControlRecupera.passwordCodigo.errors?.required || errorControlRecupera.passwordCodigo.errors?.pattern)">
+                                    Tu nueva contraseña de al menos 6 caracteres, un numero, una mayuscula y un
+                                    simbolo ($@$#%&-) .
+                                </span>
+
+                            </div>
+
+                            <button type="submit">Guardar</button>
+                        </form>
+                        <!--Termina formulario de recupera password-->
+                    </div>
+                </div>
+                <!--Termina recupera password-->
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--Termina Modal Registro | recupera password-->

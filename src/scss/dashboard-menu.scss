@@ -89,12 +89,13 @@
                 margin-top: 20px;
                 margin-bottom: 20px;
                 a {
-                    color: $negroKaxan;
+                    //color: $negroKaxan;
                     font-weight: 400 !important;
                     font-size: 12pt !important;
                     margin-left: 10px !important;
                 }
-            }
+                
+                }
         }
     }
 }
@@ -103,4 +104,13 @@
     #dashboard-menu {
         display: none;
     }
+}
+
+
+.dashboardMenu{
+    color: $negroKaxan; 
+}
+
+.dashboardMenuActive{
+    color: #FF8400 !important;
 }

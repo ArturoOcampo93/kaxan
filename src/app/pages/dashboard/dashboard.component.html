@@ -1,9 +1,80 @@
 <div class="flex">
-    <app-dashboard-menu></app-dashboard-menu>
-    <div class="width100">
-        <app-dashboard-infogeneral></app-dashboard-infogeneral>
-        <!--<app-dashboard-preferencias></app-dashboard-preferencias>-->
-        <!--<app-dashboard-historial></app-dashboard-historial>-->
-        <!--<app-dashboard-premios></app-dashboard-premios>-->
+    <div id="dashboard-menu">
+        <div class="cont-perfil">
+            <div class="flex-center">
+                <div>
+                    <div class="cont-photo">
+                        <!-- 
+                                El porcentaje se maneja partiendo un circulo en 4 secciones y se pinta cada seccion de color "NaranjaKaxan" $colorKaxan: #FF8400;
+                                Se debe buscar y cambiar el ID "#circulo-porcentaje"
+                            -->
+                        <div id="circulo-porcentaje"></div>
+    
+                        <!--Imagen del perfil como "background-image"-->
+                        <div id="circulo-foto"></div>
+                    </div>
+                </div>
+            </div>
+            <!--Se muestra solo en la version Tablet & Mobile-->
+            <div class="datos">
+                <h3>{{ this.vistaUsuario.userName }}</h3>
+                <p>{{ this.vistaUsuario.percentage }}% Perfil Completado</p>
+            </div>
+        </div>
+        <div class="menu-dashboard">
+            <ul>
+                <!--<li onclick="MenuDashboardDesktop(1)">
+                    <img id="img-info-menu" src="assets/images/info.png" alt="Información general">
+                    <a id="info-menu">Información general</a>
+                </li>
+                <li onclick="MenuDashboardDesktop(2)">
+                    <img id="img-preferencias-menu" src="assets/images/preferencias-gris.png" alt="Preferencias">
+                    <a id="preferencias-menu">Preferencias</a>
+                </li>
+                <li onclick="MenuDashboardDesktop(3)">
+                    <img id="img-historial-menu" src="assets/images/historial-gris.png" alt="Historial de Promociones">
+                    <a id="historial-menu">Historial de promos</a>
+                </li>
+                <li onclick="MenuDashboardDesktop(4)">
+                    <img id="img-premios-menu" src="assets/images/premios-gris.png" alt="Premios">
+                    <a id="premios-menu">Premios</a>
+                </li>-->
+                <li>
+                    <a (click)="cambiaSeccion(0)" [ngClass]="{'dashboardMenuActive': miseccion == 0 }" class="dashboardMenuActive"><i class="fa fa-info-circle fa-2x" aria-hidden="true"></i>  Información general</a>
+                </li>
+                <li>
+                    <a (click)="cambiaSeccion(1)" [ngClass]="{'dashboardMenuActive': miseccion == 1 }" class="dashboardMenu"><i class="fa fa-heart fa-2x" aria-hidden="true"></i>  Preferencias</a>
+                </li>
+                <li>
+                    <a (click)="cambiaSeccion(2)" [ngClass]="{'dashboardMenuActive': miseccion == 2 }" class="dashboardMenu"><i class="fa fa-th-list fa-2x" aria-hidden="true"></i>  Historial de promos</a>
+                </li>
+                <li>
+                    <a (click)="cambiaSeccion(3)" [ngClass]="{'dashboardMenuActive': miseccion == 3 }" class="dashboardMenu"><i class="fa fa-trophy fa-2x" aria-hidden="true"></i>  Premios</a>
+                </li>
+
+                
+            </ul>
+        </div>
     </div>
+    <!--Termina Header Dashboard-->
+
+
+
+
+
+    <div class="width100" *ngIf="miseccion == 0">
+        <app-dashboard-infogeneral></app-dashboard-infogeneral>        
+    </div>
+    <div class="width100" *ngIf="miseccion == 1">
+        <app-dashboard-preferencias></app-dashboard-preferencias>
+    </div>
+    <div class="width100" *ngIf="miseccion == 2">
+        <app-dashboard-historial></app-dashboard-historial>
+    </div>
+    <div class="width100" *ngIf="miseccion == 3">
+        <app-dashboard-premios></app-dashboard-premios>
+    </div>
+    
+    
+    
 </div>

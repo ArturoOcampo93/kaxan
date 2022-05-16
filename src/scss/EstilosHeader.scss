@@ -1095,3 +1095,78 @@ button {
 #info {
     color: $colorKaxan;
 }
+
+.cont-botones {
+    width: 100%;
+    display: flex;
+    div {
+        width: 50%;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+            margin: 0%;
+            cursor: pointer;
+        }
+        p:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.activeButtons{
+    background-color: rgb(235, 235, 235);
+}
+
+
+.cont-recupera {
+    /*Display | Block*/
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+
+    .cont-linea {
+        width: 100%;
+        p {
+            position: absolute;
+            background-color: white;
+            color: $grisOscuroKaxan;
+            padding-left: 5px;
+            padding-right: 5px;
+            left: 50%;
+            margin-top: -12px;
+        }
+        .linea {
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid $grisKaxan;
+        }
+    }
+    .form-recupera {
+        width: 100%;
+        margin-bottom: 15px;
+        form {
+            width: 100%;
+            input {
+                height: 45px;
+                /*Bordes Redondos*/
+                border-radius: 0px 5px 5px 0px;
+                -moz-border-radius: 0px 5px 5px 0px;
+                -webkit-border-radius: 0px 5px 5px 0px;
+            }
+        }
+    }
+    p {
+        a {
+            font-weight: 600;
+            cursor: pointer;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+

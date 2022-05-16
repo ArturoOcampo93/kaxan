@@ -67,7 +67,7 @@ function botonesRegistro(x) {
     }
 }
 
-function MenuDashboard(x) {
+/*function MenuDashboard(x) {
     switch (x) {
         case 1:
             document.getElementById('img-info').src = "assets/images/info.png";
@@ -132,9 +132,9 @@ function MenuDashboard(x) {
         default:
             console.log('Tienes un error en la funcion MenuDashboard');
     }
-}
+}*/
 
-function MenuDashboardDesktop(x) {
+/*function MenuDashboardDesktop(x) {
     switch (x) {
         case 1:
             document.getElementById('img-info-menu').src = "assets/images/info.png";
@@ -195,4 +195,4 @@ function MenuDashboardDesktop(x) {
         default:
             console.log('Tienes un error en la funcion MenuDashboard-Desktop');
     }
-}
+}*/
