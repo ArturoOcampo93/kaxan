@@ -117,7 +117,7 @@ nav {
 /* Display | Flex */
 
 #NavLogIn {
-    display: none;
+    display: flex;
     margin-right: 30px;
     .cont-alertas {
         margin-right: 45px;
@@ -130,7 +130,7 @@ nav {
             margin: 0;
             position: absolute;
             margin-left: 17px;
-            margin-top: -10px;
+            margin-top: -18px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -1115,17 +1115,16 @@ button {
     }
 }
 
-.activeButtons{
+.activeButtons {
     background-color: rgb(235, 235, 235);
 }
 
-
 .cont-recupera {
     /*Display | Block*/
+    display: block;
     width: 100%;
     text-align: center;
     padding: 20px;
-
     .cont-linea {
         width: 100%;
         p {
@@ -1170,3 +1169,130 @@ button {
 }
 
 
+/**/
+
+#menu-secundario {
+    margin: 0;
+    padding: 0%;
+    list-style: none;
+    li {
+        a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            padding-left: 50px;
+            padding-right: 15px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    #menu-secundario {
+        li {
+            a {
+                color: black;
+                padding-left: 00px;
+                padding-right: 0px;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+/* Pagina de Promos */
+
+#bannerPrincipalPromo {
+    width: 100%;
+    height: 600px;
+    background-color: grey;
+    #textoBannerPromo {
+        position: absolute;
+        width: 600px;
+        padding: 25px;
+        margin-top: 200px;
+        margin-left: 50px;
+        h2 {
+            font-weight: bold;
+            color: white;
+            margin: 0;
+            line-height: 1.3;
+            font-size: 40px;
+        }
+        p {
+            color: white;
+            font-size: 16px;
+            line-height: 1.3;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    #bannerPrincipalPromo {
+        width: 100%;
+        height: 600px;
+        background-color: grey;
+        #textoBannerPromo {
+            width: 300px;
+            padding: 25px;
+            margin-top: 150px;
+            margin-left: 30px;
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    #bannerPrincipalPromo {
+        width: 100%;
+        height: 600px;
+        background-color: grey;
+        #textoBannerPromo {
+            width: 280px;
+            padding: 25px;
+            margin-top: 150px;
+            margin-left: 20px;
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+
+/*Premios*/
+
+#premiosPromo {
+    width: 100%;
+    .text-titles {
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        h2 {
+            font-size: 40px;
+            font-weight: bold;
+        }
+    }
+}
+
+.cont-premios {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.premioPromos {
+    width: 300px;
+}

@@ -28,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
 //social login
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { FacebookLoginProvider, GoogleLoginProvider } from 'angularx-social-login';
+import { PromosComponent } from './pages/promos/promos.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { FacebookLoginProvider, GoogleLoginProvider } from 'angularx-social-logi
     DashboardInfogeneralComponent,
     DashboardPreferenciasComponent,
     DashboardHistorialComponent,
-    DashboardPremiosComponent
+    DashboardPremiosComponent,
+    PromosComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule,

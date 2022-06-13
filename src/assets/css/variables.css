@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;600;700&display=swap");
+input:focus,
+input.form-control:focus,
+button:focus {
+  outline: none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none; }
+
+body {
+  font-family: 'Montserrat', sans-serif; }
+
+button:hover {
+  background-color: #FD0032 !important; }
+
+.dashboardActive {
+  color: #FF8400; }
+
+/*# sourceMappingURL=variables.css.map */

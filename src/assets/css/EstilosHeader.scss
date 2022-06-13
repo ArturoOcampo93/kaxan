@@ -125,7 +125,7 @@ nav {
             margin: 0;
             position: absolute;
             margin-left: 17px;
-            margin-top: -10px;
+            margin-top: -18px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -164,6 +164,7 @@ nav {
         }
     }
 }
+
 
 /*.texto-alertas {
     display: none;
@@ -1091,7 +1092,6 @@ button {
     color: $colorKaxan;
 }
 
-
 .cont-botones {
     width: 100%;
     display: flex;
@@ -1111,17 +1111,15 @@ button {
     }
 }
 
-.activeButtons{
+.activeButtons {
     background-color: rgb(235, 235, 235);
 }
-
 
 .cont-recupera {
     /*Display | Block*/
     width: 100%;
     text-align: center;
     padding: 20px;
-
     .cont-linea {
         width: 100%;
         p {
@@ -1164,4 +1162,3 @@ button {
         }
     }
 }
-
