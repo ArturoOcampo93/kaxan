@@ -4,14 +4,30 @@
             <div class="flex-center">
                 <div>
                     <div class="cont-photo">
-                        <!-- 
-                                El porcentaje se maneja partiendo un circulo en 4 secciones y se pinta cada seccion de color "NaranjaKaxan" $colorKaxan: #FF8400;
-                                Se debe buscar y cambiar el ID "#circulo-porcentaje"
-                            -->
-                        <div id="circulo-porcentaje"></div>
-    
-                        <!--Imagen del perfil como "background-image"-->
-                        <div id="circulo-foto"></div>
+
+                        <!--https://codepen.io/JMChristensen/pen/AGbeEy-->
+
+                        <!--NUEVO CIRCULO DE IMAGEN Y PORCENTAJE-->
+                        <!--Tamaño de la imagen debe ser 152x152px-->
+                        <div id="cont" data-pct="100">
+                            <svg id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                  <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+                                  <circle id="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+                            </svg>
+                            <div class="cont-center">
+                                <div class="profile">
+                                    <div class="profile-image">
+                                        <img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Eliminar una vez este funcionando el script-->
+                        <input id="percent" name="percent">
+                        <!--Termina circulo de porcentaje-->
+
+
                     </div>
                 </div>
             </div>
@@ -52,7 +68,7 @@
                     <a (click)="cambiaSeccion(3)" [ngClass]="{'dashboardMenuActive': miseccion == 3 }" class="dashboardMenu"><i class="fa fa-trophy fa-2x" aria-hidden="true"></i>  Premios</a>
                 </li>
 
-                
+
             </ul>
         </div>
     </div>
@@ -63,7 +79,7 @@
 
 
     <div class="width100" *ngIf="miseccion == 0">
-        <app-dashboard-infogeneral></app-dashboard-infogeneral>        
+        <app-dashboard-infogeneral></app-dashboard-infogeneral>
     </div>
     <div class="width100" *ngIf="miseccion == 1">
         <app-dashboard-preferencias></app-dashboard-preferencias>
@@ -74,7 +90,7 @@
     <div class="width100" *ngIf="miseccion == 3">
         <app-dashboard-premios></app-dashboard-premios>
     </div>
-    
-    
-    
+
+
+
 </div>

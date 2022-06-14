@@ -1221,12 +1221,12 @@ button {
             font-weight: bold;
             color: white;
             margin: 0;
-            line-height: 1.3;
+            line-height: 1.2;
             font-size: 40px;
         }
         p {
             color: white;
-            font-size: 16px;
+            font-size: 18px;
             line-height: 1.3;
             margin-top: 10px;
             margin-bottom: 10px;
@@ -1258,7 +1258,7 @@ button {
         background-color: grey;
         #textoBannerPromo {
             width: 280px;
-            padding: 25px;
+            padding: 10px;
             margin-top: 150px;
             margin-left: 20px;
             p {
@@ -1271,18 +1271,27 @@ button {
 
 /*Premios*/
 
+.text-titles {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    h2 {
+        font-size: 40px;
+        font-weight: bold;
+    }
+}
+
 #premiosPromo {
     width: 100%;
-    .text-titles {
-        width: 100%;
-        text-align: center;
-        margin-top: 50px;
-        margin-bottom: 50px;
-        h2 {
-            font-size: 40px;
-            font-weight: bold;
-        }
-    }
+    padding-bottom: 80px;
+}
+
+#mecanicaPromo {
+    width: 100%;
+    padding-bottom: 50px;
+    padding-top: 25px;
+    background-color: $naranjaKaxan;
 }
 
 .cont-premios {
@@ -1291,8 +1300,60 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    div {
+        max-width: 500px;
+        padding: 30px;
+        h3 {
+            font-weight: bold;
+            font-size: 40px;
+            color: $colorKaxan;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 20px;
+        }
+    }
 }
 
 .premioPromos {
     width: 300px;
+}
+
+.carousel-control-prev {
+    width: 50px;
+}
+
+.carousel-control-next {
+    width: 50px;
+}
+
+
+/* Mecanica */
+
+.cont-mecanica {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .boxMecanica {
+        width: 150px;
+        text-align: center;
+        margin: 0px 30px 30px 30px;
+        img {
+            margin-bottom: 15px;
+        }
+        h4 {
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.2;
+        }
+    }
 }

@@ -1,10 +1,11 @@
 // Importación de las variables y parametros generales
 @import 'variables';
+@import 'porcentaje-img';
 #dashboard-menu {
     background-color: $grisDashboardKaxan;
     padding-top: 160px;
     width: 350px;
-    height: 100%;
+    height: 100vh;
     margin-bottom: 0px;
     .flex-center {
         display: flex;
@@ -94,8 +95,7 @@
                     font-size: 12pt !important;
                     margin-left: 10px !important;
                 }
-                
-                }
+            }
         }
     }
 }
@@ -106,11 +106,36 @@
     }
 }
 
-
-.dashboardMenu{
-    color: $negroKaxan; 
+.dashboardMenu {
+    color: $negroKaxan;
 }
 
-.dashboardMenuActive{
+.dashboardMenuActive {
     color: #FF8400 !important;
+}
+
+
+/* Profile Section */
+
+.cont-center {
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    margin-top: -175px;
+}
+
+.profile {
+    //padding: 5rem 0;
+}
+
+.profile-image {
+    //width: calc(33.333% - -5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0rem;
+}
+
+.profile-image img {
+    border-radius: 50%;
 }
