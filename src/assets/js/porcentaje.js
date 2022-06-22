@@ -1,5 +1,5 @@
 $('#percent').on('change', function() {
-    var val = parseInt($().val());
+    /*var val = parseInt($().val());
     var $circle = $('#svg #bar');
 
     if (isNaN(val)) {
@@ -16,7 +16,7 @@ $('#percent').on('change', function() {
         $circle.css({ strokeDashoffset: pct });
 
         $('#cont').attr('data-pct', val);
-    }
+    }*/
 });
 
 // para ver el ejemplo entrar a este enlace:

@@ -20,7 +20,8 @@ export interface usuario {
 })
 export class UsuarioService {
   
-  url: string = "http://localhost/KAXAN/restFront";
+  //url: string = "http://localhost/KAXAN/restFront";
+  url: string = "https://myma-demos.com.mx/KAXAN/restFront";
   MI_TOKEN: string = "";
     
   constructor(private http: HttpClient) { }

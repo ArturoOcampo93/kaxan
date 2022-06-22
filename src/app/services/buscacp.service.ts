@@ -6,7 +6,8 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class BuscacpService {
 
-  url: string = "http://localhost/KAXAN/restFront";
+  url: string = "https://myma-demos.com.mx/KAXAN/restFront/";
+  //url: string = "http://localhost/KAXAN/restFront";
 
   constructor(private http: HttpClient) { }
 
