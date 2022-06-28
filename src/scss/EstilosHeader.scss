@@ -26,6 +26,7 @@ header {
 
 nav {
     width: 100%;
+    height: 170px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,7 +38,7 @@ nav {
         align-items: center;
     }
     .cont-logo {
-        margin-left: 25px;
+        margin-left: 65px;
         width: 250px;
     }
     .buscador {
@@ -497,7 +498,7 @@ nav {
 
 .modal-profile-content {
     width: 280px;
-    height: 610px !important;
+    height: auto;
     border-top: none;
     background-color: $grisKaxan;
 }

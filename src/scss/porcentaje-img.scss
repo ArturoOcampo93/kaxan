@@ -32,3 +32,48 @@
     line-height: 160px;
     font-size: 2em;
 }
+
+
+/*Circulo de header*/
+
+#svg2 circle {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+    //stroke: #666;
+    stroke-width: 1em;
+}
+
+#svg2 #bar2 {
+    stroke: #FF8400;
+}
+
+#cont2 {
+    display: block;
+    height: 200px;
+    width: 200px;
+    margin: 0;
+    //border-radius: 100%;
+    position: relative;
+}
+
+#cont2:after {
+    position: absolute;
+    display: none;
+    height: 160px;
+    width: 160px;
+    left: 50%;
+    top: 50%;
+    content: attr(data-pct)"%";
+    margin-top: -80px;
+    margin-left: -80px;
+    //border-radius: 100%;
+    line-height: 160px;
+    font-size: 2em;
+}
+
+#icon-edit-picture {
+    position: absolute;
+    margin-top: -100px;
+    margin-left: 90px;
+    cursor: pointer;
+}
